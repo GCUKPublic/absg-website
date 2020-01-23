@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    {{content_page.items[0].fields.title}}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="app-pane__body govuk-width-container">
+        <div class="app-pane__content">
+            <h1 class="govuk-heading-l">{{content_page.items[0].fields.title}}</h1>
+            <p class="govuk-body">
+                {% markdown %}
+                {{content_page.items[0].fields.storyBody | safe}}
+                {% endmarkdown %}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{content_page.items[0].fields.pageTitle}}
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+    <div class="app-pane__body govuk-width-container">
+        <div class="app-pane__subnav app-hide-mobile">
+            <nav class="gc-vertical-nav">
+                <ul class="gc-vertical-nav__section">
+                    <li class="gc-vertical-nav__section-item {% if year ==='2020'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link"
+                            href="/news/2020">2020</a>
+                    </li>
+                    <li class="gc-vertical-nav__section-item {% if year ==='2019'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link"
+                            href="/news/2019">2019</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="app-pane__content">
+            <h1 class="govuk-heading-l">{{content_page.items[0].fields.pageTitle}}</h1>
+
+            <p class="govuk-body">
+
+                {% for i in list_of_pages.items %}
+                
+                <p class="govuk-body">
+                    <a class="govuk-link"
+                        href="/news/story/{{ i.fields.slug }}">{{i.fields.title}}</a>
+                </p>
+            
+                {%endfor%}
+
+               </p>
+
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
