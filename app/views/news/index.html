@@ -9,7 +9,18 @@
 {% endblock %}
 
 {% block heroContent %}
-
+<section class="gc-hero">
+ 
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+         <h1 class="govuk-heading-l govuk-!-margin-bottom-3">News</h1>
+         <p class="govuk-body-l">News, speeches and updates from the ABSG</p>
+        </div>
+      </div>
+    </div>
+  
+  </section>
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,20 +48,35 @@
         </div>
 
         <div class="app-pane__content">
-            <h1 class="govuk-heading-l">{{content_page.items[0].fields.pageTitle}}</h1>
-
-            <p class="govuk-body">
-
-                {% for i in list_of_pages.items %}
-                
-                <p class="govuk-body">
-                    <a class="govuk-link"
-                        href="/news/story/{{ i.fields.slug }}">{{i.fields.title}}</a>
-                </p>
             
-                {%endfor%}
 
-               </p>
+     
+
+
+                <div class="govuk-grid-row gc-card-group"> {% for i in list_of_pages.items %}
+                    <div class="govuk-grid-column-full gc-card-group__item">
+    
+                        <div class="gc-card">
+                            <a class="gc-card__link-wrapper" href="/news/story/{{ i.fields.slug }}">
+                                <div class="gc-card__content">
+                                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
+                                   
+                                    <p class="gc-card__description govuk-body-s">
+                                        {{i.fields.publishedDate | date('DD MMMM YYYY')}}</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>    {%endfor%}
+                </div>
+
+           
+
+
+    
+            
+            
+
 
 
         </div>

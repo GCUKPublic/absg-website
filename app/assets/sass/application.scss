@@ -1,0 +1,262 @@
+$white: #ffffff;
+$black: #0b0c0c;
+$grey-1: #626a6e;
+$yellow: #ffdd00;
+
+.gc-header {
+    background: #D8D8D8;
+}
+
+.gc-hero {
+    background-color: #b30000;
+}
+
+.gc-hero-meta {
+    background-color: #D72727;
+    margin-bottom: -20px;
+padding: 15px 0px;
+}
+
+.facebook{max-width: 32px; fill: #1877F2}
+.twitter{max-width: 32px; fill: #1DA1F2}
+
+.app-related-items {
+    border-top-color: #b30000;
+    }
+
+.gc-weight-normal {
+    font-weight: 400;
+}
+
+.gc-card__content {
+    padding: 20px;
+}
+
+.gc-site-menu {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    position: relative;
+    background-color: #800000;
+
+    margin-bottom: -25px;
+    margin-top: 15px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 960px;
+    height: 50px;
+    margin: auto;
+    position: relative;
+    background-color: #800000;
+    z-index: 7;
+
+    li {
+        float: left;
+        height: 100%;
+        margin: 0;
+        padding: 0px;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        font-size: 18px;
+        z-index: 9;
+        padding: 0px 20px;
+        height: 100%;
+    }
+}
+
+a.active {
+    background-color: #b30000;
+}
+
+
+
+
+
+
+.menu li:hover,
+.menu li:focus,
+.menu li:active {
+    background-color: #b30000;
+
+}
+
+.gc-register-search {
+    float: right;
+    width: 50%;
+}
+
+.gc-register-search * {
+    box-sizing: border-box;
+
+
+}
+
+.gc-register-search form {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.gc-register-search form .inner-form {
+    background: $white;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    // border: 2px solid $grey-1;
+    // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+
+.gc-register-search form .inner-form .input-field {
+    height: 48px;
+}
+
+
+.gc-register-search form .inner-form .input-field input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: $black !important;
+}
+
+.gc-register-search--whitebg form .inner-form .input-field input {
+
+    border: 2px solid $black;
+
+}
+
+
+
+.gc-register-search form .inner-form .input-field input.placeholder {
+    color: $grey-1;
+    font-size: 16px;
+}
+
+.gc-register-search form .inner-form .input-field input:-moz-placeholder {
+    color: $grey-1;
+    font-size: 16px;
+}
+
+.gc-register-search form .inner-form .input-field input::-webkit-input-placeholder {
+    color: $grey-1;
+    font-size: 16px;
+}
+
+.gc-register-search form .inner-form .input-field input:hover,
+.gc-register-search form .inner-form .input-field input:focus {
+    box-shadow: 0 0 0 4px $yellow;
+
+}
+
+
+.gc-register-search form .inner-form .input-field.second-wrap {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.gc-register-search form .inner-form .input-field.third-wrap {
+    width: 50px;
+    margin-left: 4px;
+}
+
+.gc-register-search--whitebg form .inner-form .input-field.third-wrap {
+
+    margin-left: 0px;
+
+}
+
+
+.gc-register-search form .inner-form .input-field.third-wrap .btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #B30000;
+    transition: all .2s ease-out, color .2s ease-out;
+}
+
+.gc-register-search form .inner-form .input-field.third-wrap .btn-search svg {
+    width: 16px;
+}
+
+.gc-register-search form .inner-form .input-field.third-wrap .btn-search:hover {
+    background: $black;
+    box-shadow: 0 0 0 4px $yellow;
+}
+
+.gc-register-search form .inner-form .input-field.third-wrap .btn-search:focus {
+
+    box-shadow: 0 0 0 4px $yellow;
+}
+
+
+@media screen and (max-width: 992px) {
+    .gc-register-search form .inner-form .input-field {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .gc-register-search form .inner-form {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .gc-register-search form .inner-form .input-field {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .gc-register-search form .inner-form .input-field input {
+        padding: 10px 15px;
+    }
+
+    .gc-register-search form .inner-form .input-field.first-wrap {
+        width: 100%;
+        border-right: 0;
+    }
+
+    .gc-register-search form .inner-form .input-field.first-wrap .choices__inner {
+        padding: 10px 15px;
+    }
+
+    .gc-register-search form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
+        right: 11.5px;
+        border-color: #e5e5e5 transparent transparent transparent;
+    }
+
+    .gc-register-search form .inner-form .input-field.second-wrap {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .gc-register-search form .inner-form .input-field.second-wrap input {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .gc-register-search form .inner-form .input-field.third-wrap {
+        margin-bottom: 0;
+        width: 100%;
+    }
+}

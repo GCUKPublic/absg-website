@@ -7,6 +7,8 @@ const client = contentful.createClient({
 
 exports.index_get = function (req, res) {
 
+    var newsactive = 'active';
+
     var slug = req.params.slug
     var year = req.params.id;
 //validate year here
@@ -27,7 +29,8 @@ exports.index_get = function (req, res) {
                 content_page = n;
                 console.log(n.items);
                 res.render('news/story', {
-                    content_page
+                    content_page,
+                    newsactive
 
                 });
             })
@@ -67,7 +70,8 @@ exports.index_get = function (req, res) {
                 console.log(n.items);
                  res.render('news/index', {
                     year,
-                    list_of_pages
+                    list_of_pages,
+                    newsactive
 
                 });
             })
