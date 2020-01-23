@@ -238,23 +238,24 @@ if (promoMode === 'true') {
     res.redirect('/docs')
   })
 
-//   // Allow search engines to index the Prototype Kit promo site
-//   app.get('/robots.txt', function (req, res) {
-//     res.type('text/plain')
-//     res.send('User-agent: *\nAllow: /')
-//   })
-// } else {
+  // Allow search engines to index the Prototype Kit promo site
+  // app.get('/robots.txt', function (req, res) {
+  //   res.type('text/plain')
+  //   res.send('User-agent: *\nAllow: /')
+  // })
+} 
+// else {
 //   // Prevent search indexing
-//   app.use(function (req, res, next) {
-//     // Setting headers stops pages being indexed even if indexed pages link to them.
-//     res.setHeader('X-Robots-Tag', 'index')
-//     next()
-//   })
+//   // app.use(function (req, res, next) {
+//   //   // Setting headers stops pages being indexed even if indexed pages link to them.
+//   //   res.setHeader('X-Robots-Tag', 'index')
+//   //   next()
+//   // })
 
-//   app.get('/robots.txt', function (req, res) {
-//     res.type('text/plain')
-//     res.send('User-agent: *\nDisallow: /')
-//   })
+//   // app.get('/robots.txt', function (req, res) {
+//   //   res.type('text/plain')
+//   //   res.send('User-agent: *\nDisallow: /')
+//   // })
 // }
 
 // Load routes (found in app/routes.js)
