@@ -247,7 +247,7 @@ if (promoMode === 'true') {
   // Prevent search indexing
   app.use(function (req, res, next) {
     // Setting headers stops pages being indexed even if indexed pages link to them.
-    res.setHeader('X-Robots-Tag', 'noindex')
+    res.setHeader('X-Robots-Tag', 'index')
     next()
   })
 
