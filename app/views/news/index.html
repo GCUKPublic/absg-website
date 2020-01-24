@@ -4,6 +4,11 @@
 {{content_page.items[0].fields.pageTitle}}
 {% endblock %}
 
+
+{% block pageDescription %}
+News stories from the ABSG
+{% endblock %}
+
 {% block heroClass %}
 
 {% endblock %}
@@ -33,6 +38,7 @@
     <div class="app-pane__body govuk-width-container">
         <div class="app-pane__subnav app-hide-mobile">
             <nav class="gc-vertical-nav">
+                <h2 class="govuk-visually-hidden">Filter news stories by year</h2>
                 <ul class="gc-vertical-nav__section">
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2020'  %}gc-vertical-nav__section-item--current{%endif%}">
@@ -71,7 +77,7 @@
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
                                 <p class="gc-card__description govuk-body-s">
-                                    {{i.fields.publishedDate | date('DD MMMM YYYY')}}</p>
+                                    {{i.fields.publishedDate | date('DD MMMM YYYY')}}  | {{i.fields.typeOfArticle}} </p>
                             </div>
                         </a>
                     </div>
