@@ -25,14 +25,25 @@
     {
       "@context" : "http://schema.org",
       "@type" : "Article",
-      "author": "ABSG",
-      "publisher": "ABSG",
       "headline" : "{{content_page.items[0].fields.title}}",
       "datePublished" : "{{content_page.items[0].fields.publishedDate}}",
-      "publisher.logo.url" : "https://absg-beta-staging.herokuapp.com/public/images/og-logo.png",
+      "dateModified" : "{{content_page.items[0].sys.updatedAt}}",
+      "image" : "https://absg-beta-staging.herokuapp.com/public/images/og-logo.png",
       "description" : "{{content_page.items[0].fields.summary}}",
-      "mainEntityOfPage" : "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+      "mainEntityOfPage" : "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}",
+      "author": {
+        "@type": "Organization",
+        "name": "ABSG"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "ABSG",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://absg-beta-staging.herokuapp.com/public/images/logo.png"
+        }
     }
+}
     </script>
 {% endblock %}
 
