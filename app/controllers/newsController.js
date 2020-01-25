@@ -55,7 +55,7 @@ exports.index_get = function (req, res) {
                     'content_type': 'news',
                     'fields.publishedDate[gte]': yearFrom,
                     'fields.publishedDate[lte]': yearTo,
-                    'select': 'fields.title,fields.publishedDate,fields.slug',
+                    'select': 'fields.title,fields.publishedDate,fields.slug,fields.typeOfArticle',
                      order: '-fields.publishedDate'
                 }),
                 client.getEntries({
