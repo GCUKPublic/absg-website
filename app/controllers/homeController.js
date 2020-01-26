@@ -1,4 +1,5 @@
 const contentful = require('contentful')
+const homeactive = 'nhsuk-header__navigation-active';
 
 const client = contentful.createClient({
     space: process.env.space,
@@ -6,8 +7,6 @@ const client = contentful.createClient({
 })
 
 exports.index_get = function (req, res) {
-
-    var homeactive = 'active';
 
     res.render('index', {
         homeactive

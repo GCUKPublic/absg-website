@@ -90,18 +90,18 @@
             <div class="govuk-grid-row">
 
                 <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold">Published date</span>
-                    <br />
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Published date</span>
+                
                     {{content_page.items[0].fields.publishedDate | date('DD MMMM YYYY')}}
                 </div>
                 <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold">Updated date</span>
-                    <br />
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated date</span>
+                   
                     {{content_page.items[0].sys.updatedAt | date('DD MMMM YYYY')}}
                 </div>
                 <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold">Part of</span>
-                    <br />
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
+                 
                     <a href="/news"  ga-event-category="Click" ga-event-action="click" ga-event-label="Breadcrumb" name="News">News</a>
                 </div>
             </div>

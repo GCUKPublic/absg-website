@@ -1,5 +1,5 @@
 const contentful = require('contentful')
-
+const newsactive = 'nhsuk-header__navigation-active';
 const client = contentful.createClient({
     space: process.env.space,
     accessToken: process.env.spaceapi
@@ -7,7 +7,7 @@ const client = contentful.createClient({
 
 exports.index_get = function (req, res) {
 
-    var newsactive = 'active';
+    
 
     var slug = req.params.slug
     var year = req.params.id;
