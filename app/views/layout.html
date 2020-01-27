@@ -174,10 +174,10 @@
                         <span class="nhsuk-u-visually-hidden">Search</span>
                     </button>
                     <div class="nhsuk-header__search-wrap" id="wrap-search">
-                        <form class="nhsuk-header__search-form" id="search" action="/search/"
-                            method="get" role="search">
+                        <form class="nhsuk-header__search-form" id="search" action="/search/" method="get"
+                            role="search">
                             <label class="nhsuk-u-visually-hidden" for="search-field">Search the ABSG website</label>
-                           
+
                             <input class="nhsuk-search__input" id="search-field" name="q" type="search"
                                 placeholder="Search" autocomplete="off">
                             <button class="nhsuk-search__submit" type="submit">
@@ -233,7 +233,7 @@
                         </a>
                     </li>
                     <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="/about-us">
+                        <a class="nhsuk-header__navigation-link {{aboutActive}}" href="/about-us">
                             About Us
                             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" aria-hidden="true">
@@ -244,7 +244,7 @@
                         </a>
                     </li>
                     <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="/research-and-analysis">
+                        <a class="nhsuk-header__navigation-link {{researchActive}}" href="/research-and-analysis">
                             Research and analysis
                             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" aria-hidden="true">
@@ -266,7 +266,7 @@
                         </a>
                     </li>
                     <li class="nhsuk-header__navigation-item">
-                        <a class="nhsuk-header__navigation-link" href="contact-us">
+                        <a class="nhsuk-header__navigation-link {{contactActive}}" href="/contact-us">
                             Contact Us
                             <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24" aria-hidden="true">
@@ -289,8 +289,8 @@
         </div>
     </section>
     <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
-        <div class="govuk-width-container">
-            {% block content %}{% endblock %}</div>
+       
+            {% block content %}{% endblock %}
     </main>
 
 

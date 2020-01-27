@@ -1,13 +1,14 @@
-const contentful = require('contentful')
-const newsactive = 'nhsuk-header__navigation-active';
-const client = contentful.createClient({
-    space: process.env.space,
-    accessToken: process.env.spaceapi
-})
+
+// AWJ - I've moved the contentful declaration and client config into a module (think middleware) so this 1-liner can be used in all controllers
+// Just call cms.cmsClient to call the API
+// Ideally, the Promises should also go into modules to be reused and cached more easily to reduce API calls
+
+const cms = require('../middleware/contentful');
+
 
 exports.index_get = function (req, res) {
 
-    
+    var newsactive = 'active';
 
     var slug = req.params.slug
     var year = req.params.id;
@@ -20,7 +21,7 @@ exports.index_get = function (req, res) {
     //or just latest year if no id 2020
     if (slug) {
         Promise.all([
-                client.getEntries({
+                cms.cmsClient.getEntries({
                     'content_type': 'news',
                     'fields.slug': slug
                 })
@@ -51,14 +52,14 @@ exports.index_get = function (req, res) {
         //var datetoSearchFrom = '01/01/:year';
         console.log(year)
         Promise.all([
-                client.getEntries({
+                cms.cmsClient.getEntries({
                     'content_type': 'news',
                     'fields.publishedDate[gte]': yearFrom,
                     'fields.publishedDate[lte]': yearTo,
                     'select': 'fields.title,fields.publishedDate,fields.slug,fields.typeOfArticle',
                      order: '-fields.publishedDate'
                 }),
-                client.getEntries({
+                cms.cmsClient.getEntries({
                     'content_type': 'news',
                     'select': 'fields.publishedDate'
                 })

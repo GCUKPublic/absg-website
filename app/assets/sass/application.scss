@@ -1217,3 +1217,10 @@ a.active {
 .gc-card__description span{font-size: 14px; padding: 15px; margin-top: 15px;}
 .gc-card__description span:first-of-type{padding-left: 0px;}
 .gc-card__description span:last-of-type {padding-right: 0px;}
+
+.gc-section:first-of-type {
+    display: block;
+    padding: 40px 0 40px 0;
+    background: #f6f6f6;
+    margin: -40px 0px;
+}

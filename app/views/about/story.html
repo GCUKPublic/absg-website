@@ -91,19 +91,18 @@
 
                 <div class="govuk-grid-column-one-quarter">
                     <span class="govuk-!-font-weight-bold gc-meta-title">Published date</span>
-
+                
                     {{content_page.items[0].fields.publishedDate | date('DD MMMM YYYY')}}
                 </div>
                 <div class="govuk-grid-column-one-quarter">
                     <span class="govuk-!-font-weight-bold gc-meta-title">Updated date</span>
-
+                   
                     {{content_page.items[0].sys.updatedAt | date('DD MMMM YYYY')}}
                 </div>
                 <div class="govuk-grid-column-one-quarter">
                     <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
-
-                    <a href="/news" ga-event-category="Click" ga-event-action="click" ga-event-label="Breadcrumb"
-                        name="News">News</a>
+                 
+                    <a href="/news"  ga-event-category="Click" ga-event-action="click" ga-event-label="Breadcrumb" name="News">News</a>
                 </div>
             </div>
         </div>
@@ -113,17 +112,17 @@
 
 {% block content %}
 <div class="govuk-width-container">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-            {% markdown %}
-            {{content_page.items[0].fields.storyBody | safe}}
-            {% endmarkdown %}
-        </div>
-        <div class="govuk-grid-column-one-third">
-            {% include "../includes/sharethis.html" %}
-        </div>
-
+        {% markdown %}
+        {{content_page.items[0].fields.storyBody | safe}}
+        {% endmarkdown %}
     </div>
+    <div class="govuk-grid-column-one-third">
+        {% include "../includes/sharethis.html" %}
+    </div>
+
+</div>
 </div>
 {% endblock %}

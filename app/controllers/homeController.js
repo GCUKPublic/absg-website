@@ -1,10 +1,7 @@
-const contentful = require('contentful')
+
 const homeactive = 'nhsuk-header__navigation-active';
 
-const client = contentful.createClient({
-    space: process.env.space,
-    accessToken: process.env.spaceapi
-})
+const cms = require('../middleware/contentful');
 
 exports.index_get = function (req, res) {
 
