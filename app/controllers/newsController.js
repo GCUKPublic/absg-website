@@ -1,4 +1,3 @@
-
 // AWJ - I've moved the contentful declaration and client config into a module (think middleware) so this 1-liner can be used in all controllers
 // Just call cms.cmsClient to call the API
 // Ideally, the Promises should also go into modules to be reused and cached more easily to reduce API calls
@@ -12,7 +11,7 @@ exports.index_get = function (req, res) {
 
     var slug = req.params.slug
     var year = req.params.id;
-//validate year here
+    //validate year here
     if(slug ===undefined && year === undefined)
     {
         year='2020'

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{content_page.items[0].fields.name}}
+{% endblock %}
+
+{% block pageDescription %}
+{{content_page.items[0].fields.summary}}
+{% endblock %}
+
+{% block pageMeta %}
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+    
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        
+        <div>
+            {{person.fields.name}}
+        </div>
+        <div>
+            {{person.fields.summary}}
+        </div>
+        <div>
+            {{person.fields.role}}
+        </div>
+        {% markdown %}    
+            {{content_page.fields.biography | safe}}
+        {% endmarkdown %}
+    </div>
+    <div class="govuk-grid-column-one-third">
+       
+        {% include "../includes/peoplelist.html" %}
+
+        {% include "../includes/sharethis.html" %}
+    </div>
+
+</div>
+</div>
+{% endblock %}

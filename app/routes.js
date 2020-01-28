@@ -22,7 +22,7 @@ router.get('/contact-us/', contactController.index_get);
 
 // About us
 router.get('/about-us/', aboutController.index_get);
-router.get('/about-us/person/:id', aboutController.person_get);
+router.get('/about-us/person/:slug', aboutController.person_get);
 router.get('/about-us/register-of-interest/:id', aboutController.registerofinterest_get);
 
 // Research pages
