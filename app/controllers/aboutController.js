@@ -7,8 +7,7 @@ exports.index_get = function (req, res) {
     Promise.all([
         cms.cmsClient.getEntries({
             'content_type': 'person',
-            'select': 'fields.name,fields.slug',
-            'fields.status': true,
+            'select': 'fields.name,fields.role,fields.slug,fields.image',
              order: '-fields.role',
              
         })
@@ -36,7 +35,7 @@ exports.person_get = function (req, res) {
                 cms.cmsClient.getEntries({
                     'content_type': 'person',
                     'fields.slug': slug,
-                    'fields.status': true,
+                    'fields.status': true
                 }),
                 cms.cmsClient.getEntries({
                     'content_type': 'person',

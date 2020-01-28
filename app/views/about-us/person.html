@@ -13,36 +13,41 @@
 
 {% block heroContent %}
 <section class="gc-hero">
-    
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{person.fields.name}}</h1>
+                <p class="govuk-body-l">{{person.fields.role}}</p>
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}
 
 {% block content %}
 <div class="govuk-width-container">
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        
-        <div>
-            {{person.fields.name}}
+            <img src="{{ person.fields.image.fields.file.url }}" style="width:100%" alt="Picture of {{person.fields.name}}" class="govuk-!-margin-bottom-4">
+
+            <h2 class="govuk-heading-m">Biography</h2>
+
+            {% markdown %}
+            {{person.fields.biography | safe}}
+            {% endmarkdown %}
+            {{person | dump}}
         </div>
-        <div>
-            {{person.fields.summary}}
+        <div class="govuk-grid-column-one-third">
+            <a href="/about-us/roi/{{person.fields.sys.id}}">{{person.fields.name}} register of interest</a>
+
+            {% include "../includes/peoplelist_sidebar.html" %}
+
+            {% include "../includes/sharethis.html" %}
         </div>
-        <div>
-            {{person.fields.role}}
-        </div>
-        {% markdown %}    
-            {{content_page.fields.biography | safe}}
-        {% endmarkdown %}
+
     </div>
-    <div class="govuk-grid-column-one-third">
-       
-        {% include "../includes/peoplelist.html" %}
-
-        {% include "../includes/sharethis.html" %}
-    </div>
-
-</div>
 </div>
 {% endblock %}

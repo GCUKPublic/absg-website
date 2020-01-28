@@ -1,15 +1,24 @@
+{% if people.items.length > 0 %}
+<div class="govuk-grid-row  gc-card-group">
 
-    <p>Lets just spit people out here for now</p>
-    {% if people.items.length > 0 %}
     {% for person in people.items %}
 
-      <div>
-            <a class="govuk-link" href="/about-us/person/{{ person.fields.slug }}">
-                {{person.fields.name}}
+
+    <div class="govuk-grid-column-one-half gc-card-group__item">
+        <div class="gc-card">
+         
+            <a class="gc-card__link-wrapper" href="/about-us/person/{{ person.fields.slug }}">
+                  <img src="{{ person.fields.image.fields.file.url }}" style="width:100%" alt="Picture of {{person.fields.name}}">
+                  <div class="gc-card__content">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{person.fields.name}}</h3>
+                    <p class="gc-card__description">{{person.fields.role}}</p>
+                </div>
             </a>
         </div>
+    </div>
 
     {%endfor%}
-    {% else %}
-    <p class="govuk-body">There are no people!</p>
-    {% endif %}
+
+</div>
+{% else %}
+{% endif %}
