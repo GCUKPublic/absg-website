@@ -16,7 +16,8 @@ exports.index_get = function (req, res) {
     .then(([people]) => {
         console.log(people.items);
         res.render('about-us/index', {
-            people
+            people,
+            aboutActive
         });
     })
     .catch(error => {
@@ -51,7 +52,8 @@ exports.person_get = function (req, res) {
                 person = person.items[0];
                 res.render('about-us/person', {
                     person,
-                    people
+                    people,
+                    aboutActive
                 });
             })
             .catch(error => {
@@ -67,7 +69,7 @@ exports.transparency_get = function (req, res) {
     var slug = req.params.slug;
 
     if (slug === undefined) {
-        return res.redirect('/about');
+        return res.redirect('/about-us');
     }
 
     console.log(slug);
@@ -86,7 +88,7 @@ exports.transparency_get = function (req, res) {
                 return res.redirect('/about');
             }
 
-            res.render('about/transparency/index', {
+            res.render('about-us/transparency/index', {
                 content_page,
                 aboutActive
 
@@ -121,7 +123,7 @@ exports.boardminutes_get = function (req, res) {
             .then(([n]) => {
                 content_page = n;
                 console.log(n.items);
-                res.render('about/transparency/board-minutes/minutes', {
+                res.render('about-us/transparency/board-minutes/minutes', {
                     content_page,
                     aboutActive
 
@@ -161,7 +163,7 @@ exports.boardminutes_get = function (req, res) {
                 //create an array of year and count
                 
                 console.log(n.items);
-                 res.render('about/transparency/board-minutes/index', {
+                 res.render('about-us/transparency/board-minutes/index', {
                     year,
                     list_of_pages,
                     aboutActive
