@@ -8,7 +8,7 @@ exports.index_get = function (req, res) {
         cms.cmsClient.getEntries({
             'content_type': 'person',
             'select': 'fields.name,fields.role,fields.slug,fields.image',
-             order: '-fields.role',
+             order: '-fields.role,fields.name',
              
         })
     ])
