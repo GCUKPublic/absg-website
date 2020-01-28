@@ -19,8 +19,8 @@ News stories from the ABSG
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">News and updates</h1>
-                <p class="govuk-body-l">News, speeches and updates from the ABSG</p>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Board minutes</h1>
+                <p class="govuk-body-l">Board meeting minutes from the ABSG</p>
             </div>
         </div>
     </div>
@@ -39,29 +39,29 @@ News stories from the ABSG
     <div class="app-pane__body govuk-width-container">
         <div class="app-pane__subnav app-hide-mobile">
             <nav class="gc-vertical-nav">
-                <h2 class="govuk-visually-hidden">Filter news stories by year</h2>
+                <h2 class="govuk-visually-hidden">Filter meeting minutes by year</h2>
                 <ul class="gc-vertical-nav__section">
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2020'  %}gc-vertical-nav__section-item--current{%endif%}">
-                        <a class="gc-vertical-nav__link govuk-link" href="/news/2020">2020</a>
+                        <a class="gc-vertical-nav__link govuk-link" href="/about-us/transparency/board-minutes/2020">2020</a>
                     </li>
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2019'  %}gc-vertical-nav__section-item--current{%endif%}">
-                        <a class="gc-vertical-nav__link govuk-link" href="/news/2019">2019</a>
+                        <a class="gc-vertical-nav__link govuk-link" href="/about-us/transparency/board-minutes/2019">2019</a>
                     </li>
 
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2018'  %}gc-vertical-nav__section-item--current{%endif%}">
-                        <a class="gc-vertical-nav__link govuk-link" href="/news/2018">2018</a>
+                        <a class="gc-vertical-nav__link govuk-link" href="/about-us/transparency/board-minutes/2018">2018</a>
                     </li>
 
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2017'  %}gc-vertical-nav__section-item--current{%endif%}">
-                        <a class="gc-vertical-nav__link govuk-link" href="/news/2017">2017</a>
+                        <a class="gc-vertical-nav__link govuk-link" href="/about-us/transparency/board-minutes/2017">2017</a>
                     </li>
                     <li
                         class="gc-vertical-nav__section-item {% if year ==='2016'  %}gc-vertical-nav__section-item--current{%endif%}">
-                        <a class="gc-vertical-nav__link govuk-link" href="/news/2016">2016</a>
+                        <a class="gc-vertical-nav__link govuk-link" href="/about-us/transparency/board-minutes/2016">2016</a>
                     </li>
                 </ul>
             </nav>
@@ -75,12 +75,12 @@ News stories from the ABSG
                 <span class="govuk-visually-hidden">Article {{loop.index}} of {{list_of_pages.items.length}}</span>
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/news/story/{{ i.fields.slug }}">
+                        {{list_of_pages.items | dump}}
+                        <a class="gc-card__link-wrapper" href="/about-us/transparency/board-minutes/{{ i.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
                                 <p class="gc-card__description govuk-body-s">
                                     <span> {{i.fields.publishedDate | date('DD MMMM YYYY')}}</span>
-                                    <span class="gc-card__description--tag">{{i.fields.typeOfArticle}} </span>
                                 </p>
                             </div>
                         </a>
@@ -89,7 +89,7 @@ News stories from the ABSG
                 {%endfor%}
                 {% else %}
                 <div class="govuk-grid-column-two-thirds">
-                    <p class="govuk-body">There are no news items for the selected year.</p>
+                    <p class="govuk-body">There are no minutes published for the selected year.</p>
                     </div>
                 {% endif %}
             </div>
