@@ -42,9 +42,12 @@ Board members, meetings and governance
                 members, including a Chair, with a wide range of expertise. They are:</p>
 
             <h2 class="govuk-heading-m">Board minutes, terms of reference and register of interests</h2>
-            <p class="govuk-body"><a href="/about-us/transparency/board-minutes/2019">Board minutes for 2019</a> are published on our website for transparency. </p>
-            <p class="govuk-body">Board minutes for <a href="/about-us/transparency/board-minutes/2018">2018</a> and <a href="/about-us/transparency/board-minutes/2017">2017</a> are also available.</p>
-            <p class="govuk-body">The <a href="/about-us/transparency/terms-of-reference">Terms of reference</a> outlining the roles and responsibilities of the board </p>
+            <p class="govuk-body"><a href="/about-us/transparency/board-minutes/2019">Board minutes for 2019</a> are
+                published on our website for transparency. </p>
+            <p class="govuk-body">Board minutes for <a href="/about-us/transparency/board-minutes/2018">2018</a> and <a
+                    href="/about-us/transparency/board-minutes/2017">2017</a> are also available.</p>
+            <p class="govuk-body">The <a href="/about-us/transparency/terms-of-reference">Terms of reference</a>
+                outlining the roles and responsibilities of the board </p>
 
             <h2 class="govuk-heading-m">Board meetings</h2>
             <p class="govuk-body">The board meets around 8 times a year. The 2020 meeting dates are:</p>
@@ -59,36 +62,19 @@ Board members, meetings and governance
             </ul>
 
             <h2 class="govuk-heading-m">Code of Conduct and Conflict of Interest policy</h2>
-            <p class="govuk-body">See the <a href="/about-us/transparency/code-of-conduct">Code of Conduct</a> for Board members.</p>
-            <p class="govuk-body">The <a href="/about-us/transparency/conflict-of-interest">Conflict of interest</a> policy applies to all Board members.</p>
+            <p class="govuk-body">See the <a href="/about-us/transparency/code-of-conduct">Code of Conduct</a> for Board
+                members.</p>
+            <p class="govuk-body">The <a href="/about-us/transparency/conflict-of-interest">Conflict of interest</a>
+                policy applies to all Board members.</p>
         </div>
+
         <div class="govuk-grid-column-one-third">
+            {% include "../includes/peoplelist.html" %}
+
+            {% include "../includes/sharethis.html" %}
         </div>
-
-
-    </div>
-<<<<<<< HEAD:app/views/about/index.html
-=======
-    <div class="govuk-grid-column-one-third">
-        <p>Lets just spit people out here for now</p>
-        {% if people.items.length > 0 %}
-        {% for person in people.items %}
-
-          <div>
-                <a class="govuk-link" href="/about-us/person/{{ person.fields.slug }}">
-                    {{person.fields.name}}
-                </a>
-            </div>
-
-        {%endfor%}
-        {% else %}
-        <p class="govuk-body">There are no people!</p>
-        {% endif %}
-
     </div>
 
 
-</div>
->>>>>>> 4c18779b76eb9b34c0e2984e0146ead4559f2d7e:app/views/about-us/index.html
 </div>
 {% endblock %}
