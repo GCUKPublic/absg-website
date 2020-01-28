@@ -1,0 +1,15 @@
+
+    <p>Lets just spit people out here for now</p>
+    {% if people.items.length > 0 %}
+    {% for person in people.items %}
+
+      <div>
+            <a class="govuk-link" href="/about-us/person/{{ person.fields.slug }}">
+                {{person.fields.name}}
+            </a>
+        </div>
+
+    {%endfor%}
+    {% else %}
+    <p class="govuk-body">There are no people!</p>
+    {% endif %}

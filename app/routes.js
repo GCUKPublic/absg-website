@@ -22,10 +22,15 @@ router.get('/contact-us/', contactController.index_get);
 
 // About us
 router.get('/about-us/', aboutController.index_get);
+<<<<<<< HEAD
 router.get('/about-us/person/:id', aboutController.person_get);
 router.get('/about-us/transparency/:slug', aboutController.transparency_get);
 router.get('/about-us/transparency/board-minutes/:id', aboutController.boardminutes_get);
 router.get('/about-us/transparency/board-minutes/:slug', aboutController.boardminutes_get);
+=======
+router.get('/about-us/person/:slug', aboutController.person_get);
+router.get('/about-us/register-of-interest/:id', aboutController.registerofinterest_get);
+>>>>>>> 4c18779b76eb9b34c0e2984e0146ead4559f2d7e
 
 // Research pages
 router.get('/research-and-analysis/', researchController.index_get);
