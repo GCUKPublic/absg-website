@@ -70,6 +70,8 @@ Board members, meetings and governance
 
   
             {% for i in list_of_pages.items %}
+
+            {% if loop.index < 7 %}
         
             <section class="attachment embedded">
 
@@ -91,9 +93,64 @@ Board members, meetings and governance
 
 
             </section>
+    
+            {% endif %}
 
             {%endfor%}
 
+
+            {% if list_of_pages.items.length >= 7 %}
+
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                    <div class="govuk-accordion__section ">
+                      <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            Older minutes
+                          </span>
+                        </h2>
+                      </div>
+                      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                      
+                            {% for i in list_of_pages.items %}
+
+
+                            {% if loop.index >= 7 %}
+                        
+                            <section class="attachment embedded">
+                
+                                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                                    {{list_of_pages.items.length}}</span>
+                                <div class="attachment-thumb">
+                                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
+                                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                                </div>
+                                <div class="attachment-details">
+                                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                                            target="_Blank">{{i.fields.title}}</a></h2>
+                                    <p class="metadata">
+                                        <span class="govuk-!-padding-right-5">
+                                            {{i.fields.minutes.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.minutes.fields.file.details.size | filesizeformat}}</span>
+                                    </p>
+                                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                                            href="/accessibility/request/">Request an accessible format</a>.</p>
+                
+                
+                            </section>
+                      
+                
+                            {% endif %}
+                
+                           
+                
+                            {%endfor%}
+                        
+                      </div>
+                    </div>
+                   
+                    
+                  </div>
+{% endif %}
           
 
             <div class="govuk-!-margin-top-9">
