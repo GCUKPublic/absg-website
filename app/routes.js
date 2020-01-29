@@ -8,6 +8,7 @@ var homeController = require('./controllers/homeController.js')
 var contactController = require('./controllers/contactController.js')
 var aboutController = require('./controllers/aboutController.js')
 var researchController = require('./controllers/researchController.js')
+var searchController = require('./controllers/searchController.js')
 
 // Homepage and standard pages
 router.get('/', homeController.index_get);
@@ -17,6 +18,9 @@ router.get('/accessibility', homeController.accessibility_get);
 router.get('/privacy-and-cookies', homeController.privacy_get);
 router.get('/terms-and-conditions', homeController.terms_get);
 router.get('/related-organisations', homeController.related_get);
+
+// Search
+router.post('/search/', searchController.index_post);
 
 // News pages
 router.get('/news/', newsController.index_get);
