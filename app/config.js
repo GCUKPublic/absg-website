@@ -26,7 +26,7 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'ABSG uses cookies to make the site simpler. <a href="#">Find out more about cookies</a>',
+  cookieText: 'ABSG uses cookies to make the site simpler. <a href="/privacy-and-cookies">Find out more about cookies</a>',
 
   // Enable or disable Browser Sync
   useBrowserSync: 'true'
