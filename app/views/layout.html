@@ -10,38 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="blue" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="apple-touch-icon" sizes="57x57"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-57x57.png?v=2">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-60x60.png?v=2">
-    <link rel="apple-touch-icon" sizes="72x72"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-72x72.png?v=2">
-    <link rel="apple-touch-icon" sizes="76x76"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-76x76.png?v=2">
-    <link rel="apple-touch-icon" sizes="114x114"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-114x114.png?v=2">
-    <link rel="apple-touch-icon" sizes="120x120"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-120x120.png?v=2">
-    <link rel="apple-touch-icon" sizes="144x144"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-144x144.png?v=2">
-    <link rel="apple-touch-icon" sizes="152x152"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-152x152.png?v=2">
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/apple-icon-180x180.png?v=2">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="https://gc-frontend-cdn.azurewebsites.net/images/public/android-icon-192x192.png?v=2">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/favicon-32x32.png?v=2">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/favicon-96x96.png?v=2">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/favicon-16x16.png?v=2">
+    <link rel="apple-touch-icon" sizes="57x57" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="60x60" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="72x72" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="76x76" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="114x114" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="120x120" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="144x144" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="152x152" href="/public/images/favicon.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/favicon.png?v=3">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/images/favicon.png?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon.png?v=3">
+    <link rel="icon" type="image/png" sizes="96x96" href="/public/images/favicon.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon.png?v=3">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage"
-        content="https://gc-frontend-cdn.azurewebsites.net/public/images/ms-icon-144x144.png?v=2">
+    <meta name="msapplication-TileImage" href="/public/images/favicon.png?v=3">
     <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" sizes="16x16 32x32 48x48"
-        href="https://gc-frontend-cdn.azurewebsites.net/public/images/favicon.ico?v=2" type="image/x-icon">
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/public/images/favicon.png?v=3" type="image/x-icon">
     <link rel="stylesheet" href="/public/nhs/css/nhsuk-3.0.2.min.css">
     <!--[if !IE 8]><!-->
     <link href="https://gc-frontend-cdn.azurewebsites.net/public/stylesheets/application.css" rel="stylesheet" />
@@ -95,11 +80,11 @@
     <script>
         document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
     </script>
-    
 
-   
+
+
     <header class="nhsuk-header" role="banner">
-            {% include "includes/cookie-banner.html" %}
+        {% include "includes/cookie-banner.html" %}
         <div class="nhsuk-width-container nhsuk-header__container">
             <div class="nhsuk-header__logo">
 
@@ -287,8 +272,8 @@
                                         ga-event-action="click" ga-event-label="News" name="News">News</a></li>
 
                                 <li><a class="govuk-footer__link" href="/contact" ga-event-category="Footer"
-                                        ga-event-action="click" ga-event-label="Contact us" name="Contact us">Contact us</a
-                                        class="govuk-link"></li>
+                                        ga-event-action="click" ga-event-label="Contact us" name="Contact us">Contact
+                                        us</a class="govuk-link"></li>
                             </ul>
                         </div>
                         <div class="govuk-grid-column-one-third">
@@ -309,19 +294,22 @@
                     <ul class="govuk-footer__inline-list">
                         <li class="govuk-footer__inline-list-item">
                             <a class="govuk-footer__link" href="/accessibility" ga-event-category="click"
-                                ga-event-action="Footer" ga-event-label="Accessibility statement" name="Accessibility statement">
+                                ga-event-action="Footer" ga-event-label="Accessibility statement"
+                                name="Accessibility statement">
                                 Accessibility statement
                             </a>
                         </li>
                         <li class="govuk-footer__inline-list-item">
                             <a class="govuk-footer__link" href="/privacy-and-cookies" ga-event-category="click"
-                                ga-event-action="Footer" ga-event-label="Privacy and cookies" name="Privacy and cookies">
+                                ga-event-action="Footer" ga-event-label="Privacy and cookies"
+                                name="Privacy and cookies">
                                 Privacy and cookies
                             </a>
                         </li>
                         <li class="govuk-footer__inline-list-item">
                             <a class="govuk-footer__link" href="terms-and-conditions" ga-event-category="click"
-                                ga-event-action="Footer" ga-event-label="Terms and conditions" name="Terms and conditions">
+                                ga-event-action="Footer" ga-event-label="Terms and conditions"
+                                name="Terms and conditions">
                                 Terms and conditions
                             </a>
                         </li>
