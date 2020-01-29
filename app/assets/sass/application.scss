@@ -1326,3 +1326,18 @@ a.active {
 .gc-card-white {
     background: #ffffff;
 }
+
+.nhsuk-search__input:focus {
+    .nhsuk-search__input:focus,  .nhsuk-search__input:active{  
+        outline: none;
+        box-shadow: 0 0 0 4px $yellow;
+    }
+}
+
+@media (min-width: 48.0625em) {
+
+    .nhsuk-search__input:focus,  .nhsuk-search__input:active{  
+        outline: none;
+        box-shadow: 0 0 0 4px $yellow;
+    }
+}
