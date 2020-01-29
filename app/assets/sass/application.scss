@@ -342,6 +342,15 @@ a.active {
     }
 }
 
+.nhsuk-header__logo {
+.govuk-link:focus, a:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+     background-color: transparent; 
+    box-shadow: 0 4px 0px 0px #0b0c0c;
+    text-decoration: none;
+}
+}
 
 
 .nhsuk-header__link {
@@ -1305,4 +1314,8 @@ a.active {
     }
 }
 
+
+
+
+.gc-card-white{background: #ffffff;}
 

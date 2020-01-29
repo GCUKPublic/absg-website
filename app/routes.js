@@ -2,15 +2,21 @@ const express = require('express')
 const router = express.Router()
 
 // Add your routes here - above the module.exports line
-//lets have a controller for each content type
+// lets have a controller for each content type
 var newsController = require('./controllers/newsController.js')
 var homeController = require('./controllers/homeController.js')
 var contactController = require('./controllers/contactController.js')
 var aboutController = require('./controllers/aboutController.js')
 var researchController = require('./controllers/researchController.js')
 
-// Homepage 
+// Homepage and standard pages
 router.get('/', homeController.index_get);
+
+// See trello: https://trello.com/c/xXqfQZOB 
+router.get('/accessibility', homeController.accessibility_get);
+router.get('/privacy-and-cookies', homeController.privacy_get);
+router.get('/terms-and-conditions', homeController.terms_get);
+router.get('/related-organisations', homeController.related_get);
 
 // News pages
 router.get('/news/', newsController.index_get);
