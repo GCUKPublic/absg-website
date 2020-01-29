@@ -30,10 +30,12 @@
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
             <img src="{{ person.fields.image.fields.file.url }}" style="width:100%"
                 alt="Picture of {{person.fields.name}}" class="govuk-!-margin-bottom-4">
-
+            </div>
+        </div>
             <h2 class="govuk-heading-m">Biography</h2>
 
             {% markdown %}

@@ -143,7 +143,28 @@ Search results
                 </div>
                 {% endif %}
 
-
+                {% if result.sys.contentType.sys.id === 'transparencyData' %}
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/about-us/transparency/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
+                                <div class="govuk-grid-row">
+                                       
+                                        <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                            <span class="govuk-body-s">Transparency data</span>
+                                        </div> <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Published</span><br>
+                                            <spanc class="govuk-body-s">
+                                                {{result.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
 
                 {% endfor %}
 
