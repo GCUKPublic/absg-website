@@ -4,30 +4,38 @@ const cms = require('../middleware/contentful');
 
 exports.index_get = function (req, res) {
 
-    Promise.all([
-        cms.cmsClient.getEntries({
-            'content_type': 'person',
-            'select': 'fields.name,fields.role,fields.slug,fields.image',
-             order: '-fields.role,fields.name',
-             
-        })
-    ])
-    .then(([people]) => {
-        console.log(people.items);
-        res.render('about-us/index', {
-            people,
-            aboutActive
-        });
-    })
-    .catch(error => {
-        console.log(error);
+    res.render('about-us/index-b', {
+        aboutActive
     });
+
+}
+
+exports.boardmembers_get = function (req, res) {
+
+    Promise.all([
+            cms.cmsClient.getEntries({
+                'content_type': 'person',
+                'select': 'fields.name,fields.role,fields.slug,fields.image',
+                order: '-fields.role,fields.name',
+
+            })
+        ])
+        .then(([people]) => {
+            console.log(people.items);
+
+            res.render('about-us/board-members', {
+                people,
+                aboutActive
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
 
 exports.person_get = function (req, res) {
     var slug = req.params.slug;
-    if(slug ===undefined)
-    {
+    if (slug === undefined) {
         res.redirect('/about-us');
     }
     if (slug) {
@@ -39,14 +47,14 @@ exports.person_get = function (req, res) {
                 }),
                 cms.cmsClient.getEntries({
                     'content_type': 'person',
-                    'fields.slug[ne]': slug,
+                    // 'fields.slug[ne]': slug,
                     'fields.status': true,
                     'select': 'fields.name,fields.slug',
-                     order: '-fields.role'
+                    order: '-fields.role,fields.name',
                 })
 
             ])
-            .then(([person,people]) => {
+            .then(([person, people]) => {
                 console.log(person.items);
                 person = person.items[0];
                 res.render('about-us/person', {
@@ -105,9 +113,8 @@ exports.boardminutes_get = function (req, res) {
     var slug = req.params.slug
     var year = req.params.id;
 
-    if(slug ===undefined && year === undefined)
-    {
-        year='2020'
+    if (slug === undefined && year === undefined) {
+        year = '2020'
     }
     //filter by year if passed
     //or just latest year if no id 2020
@@ -149,20 +156,20 @@ exports.boardminutes_get = function (req, res) {
                     'content_type': 'boardMinutes',
                     'fields.publishedDate[gte]': yearFrom,
                     'fields.publishedDate[lte]': yearTo,
-                     order: '-fields.publishedDate'
+                    order: '-fields.publishedDate'
                 }),
                 cms.cmsClient.getEntries({
                     'content_type': 'boardMinutes',
                     'select': 'fields.publishedDate'
                 })
             ])
-            .then(([n,y]) => {
+            .then(([n, y]) => {
                 list_of_pages = n;
                 list_of_years = y;
                 //create an array of year and count
-                
+
                 console.log(n.items);
-                 res.render('about-us/transparency/board-minutes/index', {
+                res.render('about-us/transparency/board-minutes/index', {
                     year,
                     list_of_pages,
                     aboutActive
@@ -173,4 +180,41 @@ exports.boardminutes_get = function (req, res) {
                 console.log(error);
             });
     }
+}
+
+exports.var_boardminutes_get = function (req, res) {
+
+    var content_page;
+    var list_of_pages;
+
+    Promise.all([
+            cms.cmsClient.getEntries({
+                'content_type': 'boardMinutes',
+                order: '-fields.publishedDate'
+            })
+
+        ])
+        .then(([n]) => {
+            list_of_pages = n;
+            //create an array of year and count
+
+            console.log(n.items);
+            res.render('about-us/board-minutes', {
+                list_of_pages,
+                aboutActive
+
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
+
+exports.governance_get = function (req, res) {
+
+    res.render('about-us/governance', {
+        aboutActive
+    });
+
 }
