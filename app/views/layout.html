@@ -81,18 +81,14 @@
         document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
     </script>
 
-
-
     <header class="nhsuk-header" role="banner">
-        {% include "includes/cookie-banner.html" %}
+
         <div class="nhsuk-width-container nhsuk-header__container">
             <div class="nhsuk-header__logo">
-
 
                 <a href="/" ga-event-category="click" ga-event-action="click" ga-event-label="Logo" name="Logo">
                     <img src="/public/images/logo.png" alt="ABSG logo" class="nhsuk-logo">
                 </a>
-
             </div>
 
             <div class="nhsuk-header__content" id="content-header">
@@ -319,7 +315,9 @@
         </div>
     </footer>
 
-    <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/jquery-1.11.3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+
     <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/all.js"></script>
     <script src="https://gc-frontend-cdn.herokuapp.com/public/javascripts/application.js"></script>
 </body>
