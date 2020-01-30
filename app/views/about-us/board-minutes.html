@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+About us
+{% endblock %}
+
+
+{% block pageDescription %}
+Board members, meetings and governance
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <ul class="govuk-list">
+                <li>
+                    — <a class="govuk-link" href="/about-us/">Overview</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-members">Board members</a>
+                </li>
+                <li>
+                        — Board meetings and minutes
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/governance">Governance</a>
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Board meetings and minutes</h2>
+
+            <p class="govuk-body">The board meets around 8 times a year. The 2020 meeting dates are:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>22 January</li>
+                <li>17 March</li>
+                <li>14 May</li>
+                <li>14 July</li>
+                <li>10 September</li>
+                <li>17 November</li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Board minutes</h2>
+
+  
+            {% for i in list_of_pages.items %}
+
+            {% if loop.index < 4 %}
+        
+            <section class="attachment embedded">
+
+                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                    {{list_of_pages.items.length}}</span>
+                <div class="attachment-thumb">
+                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
+                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                </div>
+                <div class="attachment-details">
+                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                            target="_Blank">{{i.fields.title}}</a></h2>
+                    <p class="metadata">
+                        <span class="govuk-!-padding-right-5">
+                            {{i.fields.minutes.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.minutes.fields.file.details.size | filesizeformat}}</span>
+                    </p>
+                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                            href="/accessibility/request/">Request an accessible format</a>.</p>
+
+
+            </section>
+    
+            {% endif %}
+
+            {%endfor%}
+
+
+            {% if list_of_pages.items.length >= 4 %}
+
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                    <div class="govuk-accordion__section ">
+                      <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                            Older minutes
+                          </span>
+                        </h2>
+                      </div>
+                      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                      
+                            {% for i in list_of_pages.items %}
+
+
+                            {% if loop.index >= 4 %}
+                        
+                            <section class="attachment embedded">
+                
+                                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                                    {{list_of_pages.items.length}}</span>
+                                <div class="attachment-thumb">
+                                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
+                                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                                </div>
+                                <div class="attachment-details">
+                                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                                            target="_Blank">{{i.fields.title}}</a></h2>
+                                    <p class="metadata">
+                                        <span class="govuk-!-padding-right-5">
+                                            {{i.fields.minutes.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.minutes.fields.file.details.size | filesizeformat}}</span>
+                                    </p>
+                                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                                            href="/accessibility/request/">Request an accessible format</a>.</p>
+                
+                
+                            </section>
+                      
+                
+                            {% endif %}
+                
+                           
+                
+                            {%endfor%}
+                        
+                      </div>
+                    </div>
+                   
+                    
+                  </div>
+{% endif %}
+          
+
+            <div class="govuk-!-margin-top-9">
+                   <a href="/about-us/board-members">
+                    <div class="gc-search-pagination-left">
+                        <span class="govuk-!-font-weight-bold">
+                            &lt; Previous</span> <br>
+                                <span class="">Board members
+                                </span>
+    
+                    </div>
+                </a>
+
+                <a href="/about-us/governance">
+                    <div class="gc-search-pagination-right">
+                        <span class="govuk-!-font-weight-bold">
+                            Next &gt;</span>
+                        <br>
+                        <span class="">Governance
+                        </span>
+    
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+          
+       
+    </div>
+
+
+</div>
+{% endblock %}

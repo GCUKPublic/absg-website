@@ -64,7 +64,7 @@ harms.
       <div class="govuk-grid-column-one-half">
         <div class="govuk-grid-row gc-card-group govuk-!-margin-top-8">
           <div class="govuk-grid-column-full gc-card-group__item">
-            <div class="gc-card">
+            <div class="gc-card gc-card-white">
               <a class="gc-card__link-wrapper" href="https://www.reducinggamblingharms.org" target="_Blank">
                 <div class="gc-card__content">
                   <h3 class="govuk-heading-s govuk-!-margin-bottom-2">National Strategy website</h3>
@@ -82,61 +82,30 @@ harms.
     </div>
   </div>
 </div>
-<div class="govuk-grid-row gc-section">
+<div class="gc-section">
+
+
   <div class="govuk-width-container">
 
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">Latest from the ABSG</h2>
-      <p class="govuk-body">The latest news and speeches.</p>
-    </div>
-
     <div class="govuk-grid-row">
+
       <div class="govuk-grid-column-full">
-        <div class="gc-card-group govuk-!-margin-bottom-2">
-          <div class="govuk-grid-column-one-third gc-card-group__item">
-            <div class="gc-card">
-              <a class="gc-card__link-wrapper" href="/news/">
-                <div class="gc-card__content">
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">News title</h3>
 
-                  <p class="gc-card__description govuk-body-s">
-                    <span>Date</span></p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="govuk-grid-column-one-third gc-card-group__item">
-            <div class="gc-card">
-              <a class="gc-card__link-wrapper" href="/news/">
-                <div class="gc-card__content">
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">News title</h3>
+        <h2 class="govuk-heading-m">Latest news from the ABSG</h2>
+        <div class="govuk-grid-row">
+          <div class="gc-card-group govuk-!-margin-bottom-2">
 
-                  <p class="gc-card__description govuk-body-s">
-                    <span>Date</span></p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="govuk-grid-column-one-third gc-card-group__item">
-            <div class="gc-card">
-              <a class="gc-card__link-wrapper" href="/news/">
-                <div class="gc-card__content">
-                  <h3 class="govuk-heading-s govuk-!-margin-bottom-2">News title</h3>
+            {% include "./includes/latestNewsList.html" %}
 
-                  <p class="gc-card__description govuk-body-s">
-                    <span>Date</span></p>
-                </div>
-              </a>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body">
-        <a href="/news/">More news</a>
-      </p>
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">
+          <a href="/news/">More news</a>
+        </p>
+      </div>
+
     </div>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}

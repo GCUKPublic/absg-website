@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Search results
+{% endblock %}
+
+
+{% block pageDescription %}
+
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Search results for: {{search_term}}</h1>
+                <p class="govuk-body-l">{{searchResults.total}} results found</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+            <div class="govuk-grid-row gc-card-group">
+                {% if searchResults.total !== 0 %}
+
+                {% for result in searchResults.items %}
+
+                <span class="govuk-visually-hidden">Result {{loop.index}} of {{searchResults.total}}</span>
+
+                {% if result.sys.contentType.sys.id === 'person' %}
+
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/about-us/person/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.name}}</h3>
+
+                                <div class="govuk-grid-row">
+                                    <!-- <div class="govuk-grid-column-one-third">
+                                        <span class="govuk-!-font-weight-bold govuk-body-s">Published</span><br>
+                                        <spanc class="govuk-body-s">
+                                            {{i.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                    </div> -->
+                                    <div class="govuk-grid-column-one-third">
+                                        <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                        <span class="govuk-body-s">People</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if result.sys.contentType.sys.id === 'news' %}
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/news/story/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
+                                <div class="govuk-grid-row">
+                                       
+                                        <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                            <span class="govuk-body-s">News</span>
+                                        </div> <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Published</span><br>
+                                            <spanc class="govuk-body-s">
+                                                {{result.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if result.sys.contentType.sys.id === 'registerOfInterest' %}
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper"
+                            href="/about-us/transparency/register-of-interest/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
+                                <div class="govuk-grid-row">
+                                       
+                                        <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                            <span class="govuk-body-s">Register of Interest</span>
+                                        </div> <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Last updated</span><br>
+                                            <spanc class="govuk-body-s">
+                                                {{result.sys.updatedAt | date('DD MMMM YYYY')}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if result.sys.contentType.sys.id === 'speech' %}
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/news/story/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
+                                <div class="govuk-grid-row">
+                                       
+                                        <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                            <span class="govuk-body-s">Register of Interest</span>
+                                        </div> <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Published</span><br>
+                                            <spanc class="govuk-body-s">
+                                                {{result.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if result.sys.contentType.sys.id === 'transparencyData' %}
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/about-us/transparency/{{ result.fields.slug }}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
+                                <div class="govuk-grid-row">
+                                       
+                                        <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Found in</span><br>
+                                            <span class="govuk-body-s">Transparency data</span>
+                                        </div> <div class="govuk-grid-column-one-third">
+                                            <span class="govuk-!-font-weight-bold govuk-body-s">Published</span><br>
+                                            <spanc class="govuk-body-s">
+                                                {{result.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                        </div>
+                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% endfor %}
+
+                {% else %}
+
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">No results found</p>
+                </div>
+
+                {% endif %}
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

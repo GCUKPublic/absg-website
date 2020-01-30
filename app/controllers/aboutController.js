@@ -4,6 +4,14 @@ const cms = require('../middleware/contentful');
 
 exports.index_get = function (req, res) {
 
+    res.render('about-us/index-b', {
+        aboutActive
+    });
+
+}
+
+exports.boardmembers_get = function (req, res) {
+
     Promise.all([
             cms.cmsClient.getEntries({
                 'content_type': 'person',
@@ -14,7 +22,8 @@ exports.index_get = function (req, res) {
         ])
         .then(([people]) => {
             console.log(people.items);
-            res.render('about-us/index', {
+
+            res.render('about-us/board-members', {
                 people,
                 aboutActive
             });
@@ -38,10 +47,10 @@ exports.person_get = function (req, res) {
                 }),
                 cms.cmsClient.getEntries({
                     'content_type': 'person',
-                    'fields.slug[ne]': slug,
+                    // 'fields.slug[ne]': slug,
                     'fields.status': true,
                     'select': 'fields.name,fields.slug',
-                    order: '-fields.role'
+                    order: '-fields.role,fields.name',
                 })
 
             ])
@@ -188,23 +197,58 @@ function getROIByPersonId(personId) {
 }
 
 exports.registerofinterest_get = function (req, res) {
-    var slug = req.params.slug;
-    //this is the persons slug, to find interests for 
-    if (slug === undefined) {
-        res.redirect('/about-us');
+        var slug = req.params.slug;
+        //this is the persons slug, to find interests for 
+        if (slug === undefined) {
+            res.redirect('/about-us');
+        }
+        if (slug) {
+            getPersonBySlug(slug)
+                .then((entrys) =>
+                    getROIByPersonId(entrys.items[0].sys.id)
+                    .then((roi) => {
+                        //console.log(roi.items[0]);
+                        //console.log(entrys.items[0]);
+                        res.render('about-us/transparency/register-of-interest/index', roi.items[0])
+                    }))
+                .catch(error => {
+                    console.log(error);
+                });
+        }
     }
-    if (slug) {
-        getPersonBySlug(slug)
-            .then((entrys) =>
-                getROIByPersonId(entrys.items[0].sys.id)
-                .then((roi) => {
-                    //console.log(roi.items[0]);
-                    //console.log(entrys.items[0]);
-                    res.render('about-us/transparency/register-of-interest/index', roi.items[0])
-                }))
-            .catch(error => {
-                console.log(error);
-            });
-    }
+        exports.var_boardminutes_get = function (req, res) {
 
-}
+            var content_page;
+            var list_of_pages;
+
+            Promise.all([
+                    cms.cmsClient.getEntries({
+                        'content_type': 'boardMinutes',
+                        order: '-fields.publishedDate'
+                    })
+
+                ])
+                .then(([n]) => {
+                    list_of_pages = n;
+                    //create an array of year and count
+
+                    console.log(n.items);
+                    res.render('about-us/board-minutes', {
+                        list_of_pages,
+                        aboutActive
+
+                    });
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+
+        exports.governance_get = function (req, res) {
+
+            res.render('about-us/governance', {
+                aboutActive
+            });
+
+        }

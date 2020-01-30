@@ -23,14 +23,22 @@ exports.index_get = function (req, res) {
                 cms.cmsClient.getEntries({
                     'content_type': 'news',
                     'fields.slug': slug
+                }),
+                cms.cmsClient.getEntries({
+                    'content_type': 'news',
+                    limit: 3,
+                    'select': 'fields.title,fields.publishedDate,fields.slug,fields.typeOfArticle',
+                    order: '-fields.publishedDate'
                 })
             ])
-            .then(([n]) => {
+            .then(([n,l]) => {
                 content_page = n;
+                listOfNews = l;
+
                 console.log(n.items);
                 res.render('news/story', {
                     content_page,
-                    newsactive
+                    newsactive,listOfNews
 
                 });
             })
