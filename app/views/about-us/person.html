@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{content_page.items[0].fields.name}}
+{{person.fields.name}}
 {% endblock %}
 
 {% block pageDescription %}
-{{content_page.items[0].fields.summary}}
+Register of interests for {{person.fields.name}}
 {% endblock %}
 
 {% block pageMeta %}
@@ -46,11 +46,11 @@
         <div class="govuk-grid-column-one-third">
             <aside class="app-related-items" role="complementary">
                 <h3 class="govuk-heading-s">
-                    Share this
+                  Register of Interest
                 </h3>
                 <p class="govuk-body">
                     <a href="/about-us/transparency/register-of-interest/{{person.fields.slug}}">{{person.fields.name}}
-                        register of interest</a>
+                        </a>
                 </p>
             </aside>
 

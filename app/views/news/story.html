@@ -119,6 +119,26 @@
             {% markdown %}
             {{content_page.items[0].fields.storyBody | safe}}
             {% endmarkdown %}
+
+            {% if content_page.items[0].fields.pressRelease === true %}
+
+            <h2 class="govuk-heading-s">Notes to editors</h2>
+            <ul class="govuk-list govuk-list--number">
+                <li>The Responsible Gambling Strategy Board was set up in late 2008 to advise the Gambling Commission
+                    and, in turn, the Department for Digital, Culture, Media and Sport, on research, education and
+                    treatment programmes needed to support a national responsible gambling strategy and associated
+                    funding requirements.
+                </li>
+                <li>The Gambling Commission regulates gambling in the public interest alongside licensing authorities.
+                    It does so by keeping crime out of gambling, by ensuring that gambling is conducted fairly and
+                    openly, and by protecting children and vulnerable people from being harmed or exploited by gambling.
+                    The Commission also provides independent advice to government on gambling in Britain.
+                </li>
+                <li>
+                    Journalists can contact our press office on 0121 230 6700 or email:
+                    <a href="mailto:communications@gamblingcommission.gov.uk?subject=ABSG Contact">communications@gamblingcommission.gov.uk</a> </li>
+            </ul> {% endif %}
+
         </div>
         <div class="govuk-grid-column-one-third">
             {% include "../includes/sharethis.html" %}

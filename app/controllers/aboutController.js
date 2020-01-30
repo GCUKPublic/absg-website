@@ -196,6 +196,15 @@ function getROIByPersonId(personId) {
     })
 }
 
+function getAllPeople() {
+    return cms.cmsClient.getEntries({
+        'content_type': 'person',
+        'fields.status': true,
+        'select': 'fields.name,fields.slug',
+        order: '-fields.role,fields.name',
+    })
+}
+
 exports.registerofinterest_get = function (req, res) {
         var slug = req.params.slug;
         //this is the persons slug, to find interests for 
@@ -203,19 +212,29 @@ exports.registerofinterest_get = function (req, res) {
             res.redirect('/about-us');
         }
         if (slug) {
+            var page, people;
             getPersonBySlug(slug)
                 .then((entrys) =>
                     getROIByPersonId(entrys.items[0].sys.id)
-                    .then((roi) => {
-                        //console.log(roi.items[0]);
-                        //console.log(entrys.items[0]);
-                        res.render('about-us/transparency/register-of-interest/index', roi.items[0])
-                    }))
-                .catch(error => {
-                    console.log(error);
-                });
+                    .then((roi) =>
+                        getAllPeople()
+                        .then((listofPeople) => {
+                            //console.log(roi.items[0]);
+                            //console.log(entrys.items[0]);
+                            page = roi.items[0];
+                            people = listofPeople;
+                            res.render('about-us/transparency/register-of-interest/index', {
+                                page,
+                                aboutActive,
+                                people
+                            })
+                        }))
+                    .catch(error => {
+                        console.log(error);
+                    }));
+                }
         }
-    }
+
         exports.var_boardminutes_get = function (req, res) {
 
             var content_page;

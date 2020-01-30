@@ -8,7 +8,8 @@ exports.index_post = function (req, res) {
 
     Promise.all([
             cms.cmsClient.getEntries({
-                'query': search_term
+                'query': search_term,
+                order: 'sys.updatedAt'                
             })
         ])
         .then(([n]) => {
