@@ -33,4 +33,5 @@ router.get('/research-and-analysis/', researchController.index_get);
 router.get('/research-and-analysis/:id', researchController.index_get);
 router.get('/research-and-analysis/pub/:slug', researchController.index_get);
 
+router.get('/about-us/transparency/register-of-interest/:slug', aboutController.registerofinterest_get);
 module.exports = router
