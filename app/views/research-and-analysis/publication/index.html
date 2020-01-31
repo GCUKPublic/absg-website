@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Research and analysis
+{% endblock %}
+
+
+{% block pageDescription %}
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<!-- <section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Research and analysis</h1>
+                <p class="govuk-body-l">Published research, analysis and statistics</p>
+            </div>
+        </div>
+    </div>
+
+</section> -->
+
+
+<section class="gc-hero">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l">{{publication.fields.title}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="gc-hero-meta">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter">
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Published date</span>
+                    {{publication.fields.publishedDate | date('DD MMMM YYYY')}}
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated date</span>
+                    {{publication.sys.updatedAt | date('DD MMMM YYYY')}}
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
+
+                    <a href="/research-and-analysis" ga-event-category="Click" ga-event-action="click"
+                        ga-event-label="Breadcrumb" name="News">Research and analysis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">Details</h2>
+            <p class="govuk-body">{{publication.fields.summary}}</p>
+
+
+            <h2 class="govuk-heading-m">Documents</h2>
+
+            {% for i in publication.fields.files %}
+            <section class="attachment embedded">
+                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                    {{i.items.length}}</span>
+                <div class="attachment-thumb">
+                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.file.url}}"
+                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                </div>
+                <div class="attachment-details">
+                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                            target="_Blank">{{i.fields.title}}</a></h2>
+                    <p class="metadata">
+                        <span class="govuk-!-padding-right-5">
+                            {{i.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.file.details.size | filesizeformat}}</span>
+                    </p>
+                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                            href="/accessibility/request/">Request an accessible format</a>.</p>
+
+                </div>
+            </section>
+            {%endfor%}
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+            {% include "includes/sharethis.html" %}
+ 
+        </div>
+
+    </div>
+    {% endblock %}
