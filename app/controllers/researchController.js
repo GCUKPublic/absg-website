@@ -25,8 +25,8 @@ exports.index_get = function (req, res) {
             list_of_pages = n;
             console.log(n.items);
             res.render('research-and-analysis/index', {
-                
-                list_of_pages,
+                researchActive,
+                list_of_pages
             });
         })
         .catch(error => {
@@ -53,6 +53,7 @@ exports.index_get = function (req, res) {
                 res.render('research-and-analysis/index', {
                     year,
                     list_of_pages,
+                    researchActive
                 });
             })
             .catch(error => {
@@ -77,7 +78,7 @@ exports.publication_index_get = function (req, res) {
             //console.log(publication);
             console.log(publication.fields.files);
             res.render('research-and-analysis/publication/index', {
-                publication,
+                publication,researchActive
             });
         })
         .catch(error => {
