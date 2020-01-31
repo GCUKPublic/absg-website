@@ -18,20 +18,20 @@ exports.index_get = function (req, res) {
             cms.cmsClient.getEntries({
                 'content_type': 'researchPublication',
                 'select': 'fields.title,fields.publishedDate,fields.slug',
-                 order: '-fields.publishedDate'
+                order: '-fields.publishedDate'
             })
-          ])
-        .then(([n]) => {
-            list_of_pages = n;
-            console.log(n.items);
-            res.render('research-and-analysis/index', {
-                researchActive,
-                list_of_pages
+        ])
+            .then(([n]) => {
+                list_of_pages = n;
+                console.log(n.items);
+                res.render('research-and-analysis/index', {
+                    researchActive,
+                    list_of_pages
+                });
+            })
+            .catch(error => {
+                console.log(error);
             });
-        })
-        .catch(error => {
-            console.log(error);
-        });
     }
     if (year) {
         var yearFrom = year + '-01-01T00:00:00Z';
@@ -39,14 +39,14 @@ exports.index_get = function (req, res) {
         //validate year
         console.log(year)
         Promise.all([
-                cms.cmsClient.getEntries({
-                    'content_type': 'researchPublication',
-                    'fields.publishedDate[gte]': yearFrom,
-                    'fields.publishedDate[lte]': yearTo,
-                    'select': 'fields.title,fields.publishedDate,fields.slug',
-                    order: '-fields.publishedDate'
-                })
-              ])
+            cms.cmsClient.getEntries({
+                'content_type': 'researchPublication',
+                'fields.publishedDate[gte]': yearFrom,
+                'fields.publishedDate[lte]': yearTo,
+                'select': 'fields.title,fields.publishedDate,fields.slug',
+                order: '-fields.publishedDate'
+            })
+        ])
             .then(([n]) => {
                 list_of_pages = n;
                 console.log(n.items);
@@ -68,17 +68,17 @@ exports.publication_index_get = function (req, res) {
         res.redirect('/research-and-analysis/');
     }
     Promise.all([
-            cms.cmsClient.getEntries({
-                'content_type': 'researchPublication',
-                'fields.slug': slug
-            }),
-        ])
+        cms.cmsClient.getEntries({
+            'content_type': 'researchPublication',
+            'fields.slug': slug
+        }),
+    ])
         .then(([n]) => {
             publication = n.items[0];
             //console.log(publication);
             console.log(publication.fields.files);
             res.render('research-and-analysis/publication/index', {
-                publication,researchActive
+                publication, researchActive
             });
         })
         .catch(error => {

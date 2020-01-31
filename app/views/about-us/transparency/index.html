@@ -44,34 +44,8 @@
         }
     }
 </script>
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-                "name": "Home",
-                "@id": "https://absg-beta-staging.herokuapp.com"
-            }
-        }, {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-                "name": "News",
-                "@id": "https://absg-beta-staging.herokuapp.com/news"
-            }
-        }, {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-                "name": "{{content_page.items[0].fields.title}}",
-                "@id": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
-            }
-        }]
-    }
-</script>
+
+
 {% endblock %}
 
 {% block heroContent %}
@@ -80,34 +54,24 @@
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{content_page.items[0].fields.title}}</h1>
-                <p class="govuk-body-l">{{content_page.items[0].fields.summary}}</p>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
             </div>
         </div>
     </div>
     <div class="gc-hero-meta">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Published date</span>
-
-                    {{content_page.items[0].fields.publishedDate | date('DD MMMM YYYY')}}
+                <div class="govuk-grid-column-full">
+                     <a href="/about-us/governance" class="govuk-back-link">Back to governance</a>
                 </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated date</span>
-
-                    {{content_page.items[0].sys.updatedAt | date('DD MMMM YYYY')}}
-                </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
-
-                    <a href="/about-us/governance">Governance</a>
-                </div>
+               
             </div>
         </div>
     </div>
 </section>
+
+
 {% endblock %}
 
 {% block content %}
@@ -115,12 +79,40 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
+          
+
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{content_page.items[0].fields.title}}</h1>
+            <p class="govuk-body-l">{{content_page.items[0].fields.summary}}</p>
 
             {% markdown %}
             {{content_page.items[0].fields.body | safe}}
             {% endmarkdown %}
         </div>
         <div class="govuk-grid-column-one-third">
+            <aside class="app-related-items govuk-!-margin-top-5" role="complementary">
+               
+              
+
+
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                   Published date
+                </h3>
+<p>{{content_page.items[0].fields.publishedDate | date('DD MMMM YYYY')}}</p>
+
+
+                  
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                    Updated date
+                 </h3>
+
+                    <p>{{content_page.items[0].sys.updatedAt | date('DD MMMM YYYY')}}</p>
+
+
+                  
+              
+
+          
+            </aside>
             {% include "../../includes/sharethis.html" %}
         </div>
 
