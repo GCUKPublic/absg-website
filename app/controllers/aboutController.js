@@ -13,13 +13,13 @@ exports.index_get = function (req, res) {
 exports.boardmembers_get = function (req, res) {
 
     Promise.all([
-            cms.cmsClient.getEntries({
-                'content_type': 'person',
-                'select': 'fields.name,fields.role,fields.slug,fields.image',
-                order: '-fields.role,fields.name',
+        cms.cmsClient.getEntries({
+            'content_type': 'person',
+            'select': 'fields.name,fields.role,fields.slug,fields.image',
+            order: '-fields.role,fields.name',
 
-            })
-        ])
+        })
+    ])
         .then(([people]) => {
             console.log(people.items);
 
@@ -40,20 +40,20 @@ exports.person_get = function (req, res) {
     }
     if (slug) {
         Promise.all([
-                cms.cmsClient.getEntries({
-                    'content_type': 'person',
-                    'fields.slug': slug,
-                    'fields.status': true
-                }),
-                cms.cmsClient.getEntries({
-                    'content_type': 'person',
-                    // 'fields.slug[ne]': slug,
-                    'fields.status': true,
-                    'select': 'fields.name,fields.slug',
-                    order: '-fields.role,fields.name',
-                })
+            cms.cmsClient.getEntries({
+                'content_type': 'person',
+                'fields.slug': slug,
+                'fields.status': true
+            }),
+            cms.cmsClient.getEntries({
+                'content_type': 'person',
+                // 'fields.slug[ne]': slug,
+                'fields.status': true,
+                'select': 'fields.name,fields.slug',
+                order: '-fields.role,fields.name',
+            })
 
-            ])
+        ])
             .then(([person, people]) => {
                 console.log(person.items);
                 person = person.items[0];
@@ -82,11 +82,11 @@ exports.transparency_get = function (req, res) {
     console.log(slug);
 
     Promise.all([
-            cms.cmsClient.getEntries({
-                'content_type': 'transparencyData',
-                'fields.slug': slug
-            })
-        ])
+        cms.cmsClient.getEntries({
+            'content_type': 'transparencyData',
+            'fields.slug': slug
+        })
+    ])
         .then(([n]) => {
             content_page = n;
             console.log(n.items);
@@ -121,11 +121,11 @@ exports.boardminutes_get = function (req, res) {
 
     if (slug) {
         Promise.all([
-                cms.cmsClient.getEntries({
-                    'content_type': 'boardMinutes',
-                    'fields.slug': slug
-                })
-            ])
+            cms.cmsClient.getEntries({
+                'content_type': 'boardMinutes',
+                'fields.slug': slug
+            })
+        ])
             .then(([n]) => {
                 content_page = n;
                 console.log(n.items);
@@ -150,17 +150,17 @@ exports.boardminutes_get = function (req, res) {
         //var datetoSearchFrom = '01/01/:year';
         console.log(year)
         Promise.all([
-                cms.cmsClient.getEntries({
-                    'content_type': 'boardMinutes',
-                    'fields.publishedDate[gte]': yearFrom,
-                    'fields.publishedDate[lte]': yearTo,
-                    order: '-fields.publishedDate'
-                }),
-                cms.cmsClient.getEntries({
-                    'content_type': 'boardMinutes',
-                    'select': 'fields.publishedDate'
-                })
-            ])
+            cms.cmsClient.getEntries({
+                'content_type': 'boardMinutes',
+                'fields.publishedDate[gte]': yearFrom,
+                'fields.publishedDate[lte]': yearTo,
+                order: '-fields.publishedDate'
+            }),
+            cms.cmsClient.getEntries({
+                'content_type': 'boardMinutes',
+                'select': 'fields.publishedDate'
+            })
+        ])
             .then(([n, y]) => {
                 list_of_pages = n;
                 list_of_years = y;
@@ -206,68 +206,70 @@ function getAllPeople() {
 }
 
 exports.registerofinterest_get = function (req, res) {
-        var slug = req.params.slug;
-        //this is the persons slug, to find interests for 
-        if (slug === undefined) {
-            res.redirect('/about-us');
-        }
-        if (slug) {
-            var page, people;
-            getPersonBySlug(slug)
-                .then((entrys) =>
-                    getROIByPersonId(entrys.items[0].sys.id)
+    var slug = req.params.slug;
+    //this is the persons slug, to find interests for 
+    if (slug === undefined) {
+        res.redirect('/about-us');
+    }
+    if (slug) {
+        var page, people;
+        getPersonBySlug(slug)
+            .then((entrys) =>
+                getROIByPersonId(entrys.items[0].sys.id)
                     .then((roi) =>
                         getAllPeople()
-                        .then((listofPeople) => {
-                            //console.log(roi.items[0]);
-                            //console.log(entrys.items[0]);
-                            page = roi.items[0];
-                            people = listofPeople;
-                            res.render('about-us/transparency/register-of-interest/index', {
-                                page,
-                                aboutActive,
-                                people
-                            })
-                        }))
+                            .then((listofPeople) => {
+                                //console.log(roi.items[0]);
+                                //console.log(entrys.items[0]);
+                                page = roi.items[0];
+                                people = listofPeople;
+                                res.render('about-us/transparency/register-of-interest/index', {
+                                    page,
+                                    aboutActive,
+                                    people
+                                })
+                            }))
                     .catch(error => {
                         console.log(error);
                     }));
-                }
-        }
-
-        exports.var_boardminutes_get = function (req, res) {
-
-            var content_page;
-            var list_of_pages;
-
-            Promise.all([
-                    cms.cmsClient.getEntries({
-                        'content_type': 'boardMinutes',
-                        order: '-fields.publishedDate'
-                    })
-
-                ])
-                .then(([n]) => {
-                    list_of_pages = n;
-                    //create an array of year and count
-
-                    console.log(n.items);
-                    res.render('about-us/board-minutes', {
-                        list_of_pages,
-                        aboutActive
-
-                    });
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        }
+    }
+}
 
 
-        exports.governance_get = function (req, res) {
+exports.var_boardminutes_get = function (req, res) {
 
-            res.render('about-us/governance', {
+    var content_page;
+    var list_of_pages;
+
+    Promise.all([
+        cms.cmsClient.getEntries({
+            'content_type': 'boardMinutes',
+            order: '-fields.publishedDate',
+            limit: 6
+        })
+
+    ])
+        .then(([n]) => {
+            list_of_pages = n;
+            //create an array of year and count
+
+            console.log(n.items);
+            res.render('about-us/board-minutes', {
+                list_of_pages,
                 aboutActive
-            });
 
-        }
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
+
+exports.governance_get = function (req, res) {
+
+    res.render('about-us/governance', {
+        aboutActive
+    });
+
+}

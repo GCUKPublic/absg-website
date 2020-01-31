@@ -20,7 +20,7 @@ router.get('/terms-and-conditions', homeController.terms_get);
 router.get('/related-organisations', homeController.related_get);
 
 // Search
-router.post('/search/', searchController.index_post);
+router.get('/search/', searchController.index_get);
 
 // News pages
 router.get('/news/', newsController.index_get);
