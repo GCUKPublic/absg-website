@@ -38,20 +38,10 @@ Research and analysis
     <div class="gc-hero-meta">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Published date</span>
-                    {{publication.fields.publishedDate | date('DD MMMM YYYY')}}
+                <div class="govuk-grid-column-full">
+                     <a href="/research-and-analysis/" class="govuk-back-link">Back to research and analysis</a>
                 </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated date</span>
-                    {{publication.sys.updatedAt | date('DD MMMM YYYY')}}
-                </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
-
-                    <a href="/research-and-analysis" ga-event-category="Click" ga-event-action="click"
-                        ga-event-label="Breadcrumb" name="News">Research and analysis</a>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -97,9 +87,35 @@ Research and analysis
 
         </div>
         <div class="govuk-grid-column-one-third">
+            <aside class="app-related-items govuk-!-margin-top-5" role="complementary">
+               
+              
+
+
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                   Published date
+                </h3>
+<p>{{publication.fields.publishedDate | date('DD MMMM YYYY')}}</p>
+
+
+                  
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                    Updated date
+                 </h3>
+
+                    <p>{{publication.sys.updatedAt | date('DD MMMM YYYY')}}</p>
+
+
+                  
+              
+
+          
+            </aside>
             {% include "includes/sharethis.html" %}
- 
+
+            {% include "includes/latestNewsSide.html" %}
         </div>
+  
 
     </div>
     {% endblock %}
