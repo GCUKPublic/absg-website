@@ -34,6 +34,7 @@ router.get('/contact-us/', contactController.index_get);
 router.get('/about-us/', aboutController.index_get);
 router.get('/about-us/board-members', aboutController.boardmembers_get);
 router.get('/about-us/board-minutes', aboutController.var_boardminutes_get);
+router.get('/about-us/board-minutes-archive', aboutController.var_boardminutes_archive_get);
 router.get('/about-us/governance', aboutController.governance_get);
 router.get('/about-us/person/:slug', aboutController.person_get);
 

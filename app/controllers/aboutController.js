@@ -10,6 +10,15 @@ exports.index_get = function (req, res) {
 
 }
 
+exports.var_boardminutes_archive_get = function (req, res) {
+
+    res.render('about-us/board-minutes-archive', {
+        aboutActive
+    });
+
+}
+
+
 exports.boardmembers_get = function (req, res) {
 
     Promise.all([
