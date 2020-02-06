@@ -2,6 +2,10 @@ $white: #ffffff;
 $black: #0b0c0c;
 $grey-1: #626a6e;
 $yellow: #ffdd00;
+$dark-red: #b00000;
+$mid-red: #FF5252;
+$light-red: #EF9A9A;
+
 
 .share-icon {
     width: 32px;
@@ -16,11 +20,11 @@ $yellow: #ffdd00;
 }
 
 .gc-hero {
-    background-color: #b00000;
+    background-color: $dark-red;
 }
 
 .gc-hero-meta {
-    background-color: #d72727;
+    background-color: $light-red;
     margin-bottom: -20px;
     padding: 15px 0px;
 }
