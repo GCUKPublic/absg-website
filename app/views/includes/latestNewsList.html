@@ -9,7 +9,9 @@
                     <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{news.fields.title}}</h3>
     
                     <p class="gc-card__description govuk-body-s">
-                        <span>{{news.fields.publishedDate | date('DD MMMM YYYY') }}</span></p>
+                       <span class="gc-card__description--tag">{{news.fields.typeOfArticle}} </span>   <span>{{news.fields.publishedDate | date('DD MMMM YYYY') }}</span>                
+                          
+                        </p>
                 </div>
             </a>
         </div>
