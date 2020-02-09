@@ -29,6 +29,7 @@ router.get('/news/story/:slug', newsController.index_get);
 
 // Contact us
 router.get('/contact-us/', contactController.index_get);
+router.post('/contact-us/', contactController.index_post);
 
 // About us
 router.get('/about-us/', aboutController.index_get);

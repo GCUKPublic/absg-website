@@ -34,31 +34,68 @@ Contact the ABSG
 
 {% block content %}
 <div class="govuk-width-container">
-<div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-m">Email:</h2>
+            <p class="govuk-body"><a href="mailto:info@absg.org.uk">info@absg.org.uk</a></p>
 
-    <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Email:</h2>
-        <p class="govuk-body"><a href="mailto:info@absg.org.uk">info@absg.org.uk</a></p>
+            <h2 class="govuk-heading-m">Phone:</h2>
+            <p class="govuk-body">0121 230 6666</p>
 
-        <h2 class="govuk-heading-m">Phone:</h2>
-        <p class="govuk-body">0121 230 6666</p>
+            <h2 class="govuk-heading-m">Address:</h2>
+            <p class="govuk-body">
+                <address>
+                    ABSG (care of the Gambling Commission)<br>
+                    Victoria Square House<br>
+                    Birmingham<br>
+                    B2 4BP<br>
+                    United Kingdom
+                </address>
+            </p>
 
-        <h2 class="govuk-heading-m">Address:</h2>
-        <p class="govuk-body">
-            <address>
-                ABSG (care of the Gambling Commission)<br>
-                Victoria Square House<br>
-                Birmingham<br>
-                B2 4BP<br>
-                United Kingdom
-            </address>
-        </p>
+            <p class="govuk-body"><a href="https://goo.gl/maps/xUKQu7aeYKcMEh439" target="_blank">Map of our office
+                    location</a></p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-m">Complete the form</h2>
 
-        <p class="govuk-body"><a href="https://goo.gl/maps/xUKQu7aeYKcMEh439" target="_blank">Map of our office location</a></p>
+            <form method="POST">
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="name">
+                        Your name
+                    </label>
+                    <input class="govuk-input" id="name" name="name" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact">
+                        Email address or phone number
+                    </label>
+                    <input class="govuk-input" id="contact" name="contact" type="text">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="message">
+                        Your message
+                    </label>
+
+                    <textarea class="govuk-textarea" id="message" name="message" rows="5"
+                        aria-describedby="message-hint"></textarea>
+                </div>
+
+
+                <button class="govuk-button" data-module="govuk-button" type="submit">
+                    Send message
+                </button>
+
+
+            </form>
+
+
+        </div>
+
+
     </div>
-    <div class="govuk-grid-column-one-third">
-    </div>
-
-</div>
 </div>
 {% endblock %}
