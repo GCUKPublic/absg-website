@@ -23,11 +23,6 @@ $light-red: #EF9A9A;
     background-color: $dark-red;
 }
 
-.gc-hero-meta {
-    background-color: $light-red;
-    margin-bottom: -20px;
-    padding: 15px 0px;
-}
 
 .facebook {
     max-width: 32px;
@@ -1348,4 +1343,15 @@ a.active {
 
 .gc-hero-meta{
     .govuk-back-link{border-bottom: none;}
+}
+
+.gc-hero-meta {
+    background-color: $light-red;
+    margin-bottom: -20px;
+    padding: 15px 0px;
+    color: $black;
+
+    a, .govuk-back-link{
+    color: $black !important;
+}
 }
