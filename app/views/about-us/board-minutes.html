@@ -66,7 +66,7 @@ Details and minutes of ABSG board meetings
             </ul>
 
             <h2 class="govuk-heading-l">Recent board minutes</h2>
-            <p class="govuk-body">The following minutes are for the last 6 meetings. <a href="/about-us/board-minutes-archive">Older minutes</a> are also available.</p>
+            <!-- <p class="govuk-body">The following minutes are for the last 6 meetings. <a href="/about-us/board-minutes-archive">Older minutes</a> are also available.</p> -->
 
             {% for i in list_of_pages.items %}
 
@@ -79,7 +79,7 @@ Details and minutes of ABSG board meetings
                         target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
                 </div>
                 <div class="attachment-details">
-                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                    <h2 class="govuk-heading-m" id="{{i.fields.slug}}"><a href="{{i.fields.minutes.fields.file.url}}"
                             target="_Blank">{{i.fields.title}}</a></h2>
                     <p class="metadata">
                         <span class="govuk-!-padding-right-5">

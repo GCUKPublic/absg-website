@@ -253,8 +253,7 @@ exports.var_boardminutes_get = function (req, res) {
     Promise.all([
         cms.cmsClient.getEntries({
             'content_type': 'boardMinutes',
-            order: '-fields.publishedDate',
-            limit: 6
+            order: '-fields.publishedDate'
         })
 
     ])
