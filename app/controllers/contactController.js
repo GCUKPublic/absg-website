@@ -3,7 +3,7 @@ const contactActive = 'nhsuk-header__navigation-active';
 const cms = require('../middleware/contentful');
 
 var NotifyClient = require('notifications-node-client').NotifyClient,
-    notify = new NotifyClient(process.env.NotifyKey);
+    notify = new NotifyClient(process.env.notifykey);
 
 exports.index_get = function (req, res) {
 

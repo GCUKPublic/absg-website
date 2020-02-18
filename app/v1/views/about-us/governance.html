@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Governance
+{% endblock %}
+
+
+{% block pageDescription %}
+Details of how the ABSG is governed, including policies and code of conduct.
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-s">Contents</h2>
+            <ul class="govuk-list">
+                <li>
+                    — <a class="govuk-link" href="/about-us/">Overview</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-members">Board members</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-minutes">Board meetings and minutes</a>
+                </li>
+                <li>
+                    — Governance
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Governance</h2>
+            <p class="govuk-body">
+                Governance is a word used to describe the ways that organisations ensure they run themselves efficiently
+                and effectively. It also describes the ways organisations are open and accountable to the people they
+                serve for the work they do.
+            </p>
+
+            <h2 class="govuk-heading-m"><a href="/about-us/transparency/terms-of-reference">Terms of reference</a></h2>
+
+            <p class="govuk-body">The terms of reference outlining the roles and responsibilities of the board </p>
+
+                <h2 class="govuk-heading-m"><a href="/about-us/transparency/statement-of-intent">Statement of intent</a></h2>
+            <p class="govuk-body">The statement of intent outlining the principles of the ABSG</p>
+
+                <h2 class="govuk-heading-m"><a href="/about-us/transparency/remuneration-policy">Remuneration policy</a></h2>
+            <p class="govuk-body">The remuneration policy details how board members are reumunerated for their work. </p>
+
+                <h2 class="govuk-heading-m"><a href="/about-us/transparency/code-of-conduct">Code of conduct</a></h2>
+            <p class="govuk-body">See the code of conduct for Board members.</p>
+
+                <h2 class="govuk-heading-m"><a href="/about-us/transparency/conflict-of-interest-policy">Conflict of
+                    interest</a></h2>
+            <p class="govuk-body">The conflict of interest policy applies to all Board members.</p>
+
+            <div class="govuk-!-margin-top-9">
+
+                <a href="/about-us/board-minutes">
+                    <div class="gc-search-pagination-left">
+                        <span class="govuk-!-font-weight-bold">
+                            &lt; Previous</span> <br>
+                        <span class="">Board meetings and minutes
+                        </span>
+
+                    </div>
+                </a>
+
+            </div>
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+
+            {% include "../includes/sharethis.html" %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

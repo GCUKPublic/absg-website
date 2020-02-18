@@ -4,9 +4,9 @@
 
 <div class="govuk-grid-column-one-third gc-card-group__item">
         <div class="gc-card">
-            <a href="/news/story/{{news.fields.slug}}">
+            <a class="gc-card__link-wrapper" href="/news/story/{{news.fields.slug}}">
                 <div class="gc-card__content">
-                    <h3 class="govuk-heading-s govuk-!-margin-bottom-7">{{news.fields.title}}</h3>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{news.fields.title}}</h3>
     
                     <p class="gc-card__description govuk-body-s">
                        <span class="gc-card__description--tag">{{news.fields.typeOfArticle}} </span>   <span>{{news.fields.publishedDate | date('DD MMMM YYYY') }}</span>                

@@ -11,12 +11,15 @@ $light-red: #EF9A9A;
     width: 32px;
 }
 
+.gc-section{
+    margin: 20px 0px 40px 0px;}
+
 .gc-section--alt {
     background: #f3f2f1;
 }
 
 .gc-header {
-    background: #d8d8d8;
+    background-image: radial-gradient(18% 95%, #E5E5E5 0%, #CACACA 100%);
 }
 
 .gc-hero {
@@ -282,7 +285,13 @@ a.active {
 
 
 .nhsuk-header {
-    background-color: #d8d8d8;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f2f2+0,e2e2e2+100 */
+background: rgb(242,242,242); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(242,242,242,1) 0%, rgba(226,226,226,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e2e2e2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .nhsuk-header:after {
@@ -339,7 +348,7 @@ a.active {
 }
 
 .nhsuk-header__logo .nhsuk-logo {
-    width: 200px;
+    width: 220px;
     height: auto;
     border: 0
 }
@@ -437,8 +446,8 @@ a.active {
 
 @media (min-width:40.0625em) {
     .nhsuk-header__search {
-        float: left;
-        margin-left: 8px
+        float: right;
+        margin-left: 8px;
     }
 }
 
@@ -552,7 +561,7 @@ a.active {
         outline: 0;
         padding: 0 16px;
         width: 100%;
-        border-radius: 0px;
+        border-radius: 5px 0 0 5px;
         ;
     }
 
@@ -574,7 +583,7 @@ a.active {
         margin: 0;
         outline: 0;
         padding: 8px 8px 0;
-        border-radius: 0px;
+        border-radius: 0px 5px 5px 0px;
     }
 
     .nhsuk-search__submit .nhsuk-icon__search {
@@ -682,7 +691,7 @@ a.active {
         height: 40px;
         padding: 0 12px;
         width: 200px;
-        border-radius: 0px;
+        border-radius:  5px 0px 0px 5px;
     }
 
     .nhsuk-search__input::placeholder {
@@ -707,7 +716,7 @@ a.active {
         padding-top: 2px;
         width: 44px;
 
-        border-radius: 0px;
+        border-radius: 0px 5px 5px 0px;
     }
 
     .nhsuk-icon__search {
@@ -1263,7 +1272,7 @@ a.active {
 .gc-section:first-of-type {
     display: block;
     padding: 40px 0 40px 0;
-    background: #f6f6f6;
+    background: #ffffff;
     margin: -40px 0px;
 }
 
@@ -1332,7 +1341,9 @@ a.active {
 }
 
 .nhsuk-search__input:focus {
-    .nhsuk-search__input:focus,  .nhsuk-search__input:active{  
+
+    .nhsuk-search__input:focus,
+    .nhsuk-search__input:active {
         outline: none;
         box-shadow: 0 0 0 4px $yellow;
     }
@@ -1340,12 +1351,86 @@ a.active {
 
 @media (min-width: 48.0625em) {
 
-    .nhsuk-search__input:focus,  .nhsuk-search__input:active{  
+    .nhsuk-search__input:focus,
+    .nhsuk-search__input:active {
         outline: none;
         box-shadow: 0 0 0 4px $yellow;
     }
 }
 
-.gc-hero-meta{
-    .govuk-back-link{border-bottom: none;}
+.gc-hero-meta {
+    .govuk-back-link {
+        border-bottom: none;
+    }
 }
+
+.gc-card {
+    background: #F3F2F1;
+    border: 1px solid #B1B4B6;
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.gc-card:hover {
+    box-shadow: 0 0 0 4px #fd0;
+    color: #003078;
+}
+
+.gc-card .gc-card__content .gc-card__description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
+
+
+.panel-block-container__white {
+    background: $white;
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid #F6F6F6;
+    margin: 20px 0px 40px 0px;
+}
+
+
+
+.site-top-nav{background: #BD0000;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      
+      li {
+        float: left;
+        margin-bottom: 0px;
+        font-size: 16px;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 8px 10px 8px 10px;
+        text-decoration: none;
+      }
+      
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: rgba(0,0,0,0.5);
+      }
+
+      .active {
+        background-color: rgba(0,0,0,0.5);
+        font-weight: bold;
+      }
+}
+
+
+
+.govuk-button--warning{border-radius:  5px;}
+
+*{font-family: 'Nunito', sans-serif !important;}

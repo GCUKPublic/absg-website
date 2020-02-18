@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{content_page.items[0].fields.title}}
+{% endblock %}
+
+{% block pageDescription %}
+{{content_page.items[0].fields.summary}}
+{% endblock %}
+
+{% block pageMeta %}
+<meta property="og:title" content="{{content_page.items[0].fields.title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:url"
+    content="https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}" />
+<meta property="og:image" content="https://absg-beta-staging.herokuapp.com/public/images/og-logo.png" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="314" />
+<meta property="og:description" content="{{content_page.items[0].fields.summary}}" />
+<meta property="og:article:published_time" content="{{content_page.items[0].fields.publishedDate}}" />
+<meta property="og:article:modified_time" content="{{content_page.items[0].sys.updatedAt}}" />
+<meta property="og:image:alt" content="ABSG Logo" />
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "{{content_page.items[0].fields.title}}",
+        "datePublished": "{{content_page.items[0].fields.publishedDate}}",
+        "dateModified": "{{content_page.items[0].sys.updatedAt}}",
+        "image": "https://absg-beta-staging.herokuapp.com/public/images/og-logo.png",
+        "description": "{{content_page.items[0].fields.summary}}",
+        "mainEntityOfPage": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}",
+        "author": {
+            "@type": "Organization",
+            "name": "ABSG"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ABSG",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://absg-beta-staging.herokuapp.com/public/images/logo.png"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "name": "Home",
+                "@id": "https://absg-beta-staging.herokuapp.com"
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "name": "News",
+                "@id": "https://absg-beta-staging.herokuapp.com/news"
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "name": "{{content_page.items[0].fields.title}}",
+                "@id": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            }
+        }]
+    }
+</script>
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{content_page.items[0].fields.title}}</h1>
+                <p class="govuk-body-l">{{content_page.items[0].fields.summary}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="gc-hero-meta">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                     <a href="/news/" class="govuk-back-link">Back to news</a>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+  
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            {% markdown %}
+            {{content_page.items[0].fields.storyBody | safe}}
+            {% endmarkdown %}
+
+            {% if content_page.items[0].fields.pressRelease === true %}
+
+            <h2 class="govuk-heading-s">Notes to editors</h2>
+            <ul class="govuk-list govuk-list--number">
+                <li>The Responsible Gambling Strategy Board was set up in late 2008 to advise the Gambling Commission
+                    and, in turn, the Department for Digital, Culture, Media and Sport, on research, education and
+                    treatment programmes needed to support a national responsible gambling strategy and associated
+                    funding requirements.
+                </li>
+                <li>The Gambling Commission regulates gambling in the public interest alongside licensing authorities.
+                    It does so by keeping crime out of gambling, by ensuring that gambling is conducted fairly and
+                    openly, and by protecting children and vulnerable people from being harmed or exploited by gambling.
+                    The Commission also provides independent advice to government on gambling in Britain.
+                </li>
+                <li>
+                    Journalists can contact our press office on 0121 230 6700 or email:
+                    <a href="mailto:communications@gamblingcommission.gov.uk?subject=ABSG Contact">communications@gamblingcommission.gov.uk</a> </li>
+            </ul> {% endif %}
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <aside class="app-related-items govuk-!-margin-top-5" role="complementary">
+               
+              
+
+
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                   Published date
+                </h3>
+<p>{{content_page.items[0].fields.publishedDate | date('DD MMMM YYYY')}}</p>
+
+
+                  
+                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+                    Updated date
+                 </h3>
+
+                    <p>{{content_page.items[0].sys.updatedAt | date('DD MMMM YYYY')}}</p>
+
+
+                  
+              
+
+          
+            </aside>
+            {% include "includes/sharethis.html" %}
+
+            {% include "includes/latestNewsSide.html" %}
+        </div>
+  
+
+
+
+
+    </div>
+</div>
+{% endblock %}

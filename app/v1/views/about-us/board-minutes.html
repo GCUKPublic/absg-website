@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Board meetings and minutes
+{% endblock %}
+
+
+{% block pageDescription %}
+Details and minutes of ABSG board meetings
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Contents</h2>
+            <ul class="govuk-list">
+                <li>
+                    — <a class="govuk-link" href="/about-us/">Overview</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-members">Board members</a>
+                </li>
+                <li>
+                    — Board meetings and minutes
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/governance">Governance</a>
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Board meetings and minutes</h2>
+
+            <p class="govuk-body">The board meets around 8 times a year. The 2020 meeting dates are:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>22 January</li>
+                <li>17 March</li>
+                <li>14 May</li>
+                <li>14 July</li>
+                <li>10 September</li>
+                <li>17 November</li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Recent board minutes</h2>
+            <p class="govuk-body">The following minutes are for the last 6 meetings. <a href="/about-us/board-minutes-archive">Older minutes</a> are also available.</p>
+
+            {% for i in list_of_pages.items %}
+
+            <section class="attachment embedded">
+
+                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                    {{list_of_pages.items.length}}</span>
+                <div class="attachment-thumb">
+                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
+                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                </div>
+                <div class="attachment-details">
+                    <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                            target="_Blank">{{i.fields.title}}</a></h2>
+                    <p class="metadata">
+                        <span class="govuk-!-padding-right-5">
+                            {{i.fields.minutes.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.minutes.fields.file.details.size | filesizeformat}}</span>
+                    </p>
+                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                            href="/accessibility/request/">Request an accessible format</a>.</p>
+                </div>
+
+            </section>        {%endfor%}
+
+            <div class="govuk-!-margin-top-9">
+                    <a href="/about-us/board-members">
+                     <div class="gc-search-pagination-left">
+                         <span class="govuk-!-font-weight-bold">
+                             &lt; Previous</span> <br>
+                                 <span class="">Board members
+                                 </span>
+     
+                     </div>
+                 </a>
+ 
+                 <a href="/about-us/governance">
+                     <div class="gc-search-pagination-right">
+                         <span class="govuk-!-font-weight-bold">
+                             Next &gt;</span>
+                         <br>
+                         <span class="">Governance
+                         </span>
+     
+                     </div>
+                 </a>
+             </div>
+        </div>
+
+
+
+        <div class="govuk-grid-column-one-third">
+            {% include "../includes/sharethis.html" %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

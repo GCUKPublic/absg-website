@@ -1,0 +1,28 @@
+<aside class="app-related-items" role="complementary">
+    <h3 class="govuk-heading-s">
+        Share this page
+    </h3>
+
+    <section id="sharer">
+        <a rel="noopener" ga-on="click" ga-event-category="Share" ga-event-action="click" ga-event-label="Facebook" name="Share to facebook"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            target="_blank"><img src="/public/images/fb-square.svg" class="share-icon" alt="Facebook icon"></a>
+
+        <a rel="noopener" ga-on="click" ga-event-category="Share" ga-event-action="click" ga-event-label="Twitter" name="Share to twitter"
+            href="https://twitter.com/intent/tweet?text={{content_page.items[0].fields.title}} https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            target="_blank"> <img src="/public/images/twitter-square.svg" class="share-icon" alt="Twitter icon"></a>
+
+        <a rel="noopener" ga-on="click" ga-event-category="Share" ga-event-action="click" ga-event-label="Linkedin" name="Share on linked in"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            target="_blank"><img src="/public/images/lin-square.svg" class="share-icon" alt="Linkedin icon"></a>
+
+        <a rel="noopener" ga-on="click" ga-event-category="Share" ga-event-action="click" ga-event-label="Whatsapp" name="Share using Whatsapp"
+            href="https://api.whatsapp.com/send?text=https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            target="_blank"><img src="/public/images/whatsapp-square.svg" class="share-icon" alt="Whatsapp icon"></a>
+
+        <a rel="noopener" ga-on="click" ga-event-category="Share" ga-event-action="click" ga-event-label="Email" name="Share by email"
+            href="mailto:?Subject=Read this story from the ABSG Website&body=https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            target="_blank"><img src="/public/images/email-square.svg" class="share-icon" alt="Email icon"></a>
+    </section>
+
+</aside>

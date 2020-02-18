@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Research and analysis
+{% endblock %}
+
+
+{% block pageDescription %}
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Research and analysis</h1>
+                <p class="govuk-body-l">Research and publications from the ABSG</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+    <div class="app-pane__body govuk-width-container">
+        <div class="app-pane__subnav app-hide-mobile">
+            <nav class="gc-vertical-nav">
+                <h2 class="govuk-visually-hidden">Filter publications by year</h2>
+                <ul class="gc-vertical-nav__section">
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ===undefined  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/">All</a>
+                    </li>
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ==='2020'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/2020">2020</a>
+                    </li>
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ==='2019'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/2019">2019</a>
+                    </li>
+
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ==='2018'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/2018">2018</a>
+                    </li>
+
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ==='2017'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/2017">2017</a>
+                    </li>
+                    <li
+                        class="gc-vertical-nav__section-item {% if year ==='2016'  %}gc-vertical-nav__section-item--current{%endif%}">
+                        <a class="gc-vertical-nav__link govuk-link" href="/research-and-analysis/2016">2016</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="app-pane__content">
+
+            <div class="govuk-grid-row gc-card-group">
+                {% if list_of_pages.items.length > 0 %}
+                {% for i in list_of_pages.items %}
+                <span class="govuk-visually-hidden">Article {{loop.index}} of {{list_of_pages.items.length}}</span>
+                <div class="govuk-grid-column-full gc-card-group__item">
+                    <div class="gc-card">
+                        <a class="gc-card__link-wrapper" href="/research-and-analysis/publication/{{i.fields.slug}}">
+                            <div class="gc-card__content">
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
+                                <p class="gc-card__description govuk-body-s">
+                                    <span> {{i.fields.publishedDate | date('DD MMMM YYYY')}}</span>
+                                    <span class="gc-card__description--tag">{{i.fields.typeOfArticle}} </span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {%endfor%}
+                {% else %}
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">There are no publications for the selected year.</p>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+{% endblock %}

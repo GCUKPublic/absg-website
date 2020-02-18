@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Overview of the ABSG
+{% endblock %}
+
+
+{% block pageDescription %}
+Information about the ABSG, how we work and our values.
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Contents</h2>
+            <ul class="govuk-list">
+                <li>
+                    — Overview
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-members">Board members</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-minutes">Board meetings and minutes</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/governance">Governance</a>
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Overview</h2>
+            <p class="govuk-body">The ABSG is an independent, expert advisory board which:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>helps deliver the National Strategy to Reduce Gambling Harms</li>
+                <li>helps increase research capacity and capability through engaging with a wide range of experts</li>
+                <li>helps share findings about best practice so they have an impact</li>
+                <li>helps solve policy dilemmas where research evidence is lacking or ambiguous.&nbsp;</li>
+            </ul>
+
+
+            <h2 class="govuk-heading-m">How we do this</h2>
+
+            <p class="govuk-body">We work by:</p>
+            <ul>
+                <li>providing independent advice to the Gambling Commission on the implementation of the National
+                    Strategy to Reduce Gambling Harms</li>
+                <li>monitoring progress of the Strategy&nbsp;</li>
+                <li>recommending priorities for research&nbsp;</li>
+                <li>strengthening prevention and treatment through robust research, evaluation and practice&nbsp;</li>
+                <li>working collaboratively with others who have expertise, bringing them together to discuss issues of
+                    mutual concern.&nbsp;</li>
+            </ul>
+            <h2 class="govuk-heading-m">Our values</h2>
+            <ul>
+                <li>integrity - we are honest, we listen to others and consider carefully diverse views&nbsp;</li>
+                <li>transparency - we are open</li>
+                <li>excellence - we are committed to high standards</li>
+                <li>collaborative - we work with others to reduce harm</li>
+            </ul>
+            <h2 class="govuk-heading-m">How we're funded</h2>
+            <p class="govuk-body">The Advisory Board for Safer Gambling is funded, and is provided with secretariat
+                support by the Gambling Commission.</p>
+
+
+            <div class="govuk-!-margin-top-9">
+
+                <a href="/about-us/board-members">
+                    <div class="gc-search-pagination-right">
+                        <span class="govuk-!-font-weight-bold">
+                            Next &gt;</span>
+                        <br>
+                        <span class="">Board members
+                        </span>
+
+                    </div>
+                </a>
+
+            </div>
+
+
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+
+
+            {% include "../includes/sharethis.html" %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

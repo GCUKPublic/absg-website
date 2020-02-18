@@ -1,0 +1,17 @@
+<aside class="app-related-items" role="complementary">
+    <h3 class="govuk-heading-s">
+        Other board members
+    </h3>
+
+    {% if people.items.length > 0 %}
+    <ul class="govuk-list">
+        {% for person in people.items %}
+        <li>
+            <a class="govuk-link" href="/about-us/person/{{ person.fields.slug }}">{{person.fields.name}}</a>
+        </li>
+        {%endfor%}
+
+    </ul>
+    {% else %}
+    {% endif %}
+    </aside>    

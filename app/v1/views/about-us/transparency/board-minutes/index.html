@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Board Minutes
+{% endblock %}
+
+
+{% block pageDescription %}
+Board meeting minutes from the ABSG
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Board minutes</h1>
+                <p class="govuk-body-l">Board meeting minutes from the ABSG</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="app-pane__body govuk-width-container">
+            <div class="app-pane__subnav app-hide-mobile">
+                <nav class="gc-vertical-nav">
+                    <h2 class="govuk-visually-hidden">Filter meeting minutes by year</h2>
+                    <ul class="gc-vertical-nav__section">
+                        <li
+                            class="gc-vertical-nav__section-item {% if year ==='2020'  %}gc-vertical-nav__section-item--current{%endif%}">
+                            <a class="gc-vertical-nav__link govuk-link"
+                                href="/about-us/transparency/board-minutes/2020">2020</a>
+                        </li>
+                        <li
+                            class="gc-vertical-nav__section-item {% if year ==='2019'  %}gc-vertical-nav__section-item--current{%endif%}">
+                            <a class="gc-vertical-nav__link govuk-link"
+                                href="/about-us/transparency/board-minutes/2019">2019</a>
+                        </li>
+
+                        <li
+                            class="gc-vertical-nav__section-item {% if year ==='2018'  %}gc-vertical-nav__section-item--current{%endif%}">
+                            <a class="gc-vertical-nav__link govuk-link"
+                                href="/about-us/transparency/board-minutes/2018">2018</a>
+                        </li>
+
+                        <li
+                            class="gc-vertical-nav__section-item {% if year ==='2017'  %}gc-vertical-nav__section-item--current{%endif%}">
+                            <a class="gc-vertical-nav__link govuk-link"
+                                href="/about-us/transparency/board-minutes/2017">2017</a>
+                        </li>
+                        <li
+                            class="gc-vertical-nav__section-item {% if year ==='2016'  %}gc-vertical-nav__section-item--current{%endif%}">
+                            <a class="gc-vertical-nav__link govuk-link"
+                                href="/about-us/transparency/board-minutes/2016">2016</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="app-pane__content">
+
+
+                {% if list_of_pages.items.length > 0 %}
+                {% for i in list_of_pages.items %}
+
+                <section class="attachment embedded">
+
+                    <span class="govuk-visually-hidden">Article {{loop.index}} of
+                        {{list_of_pages.items.length}}</span>
+                    <div class="attachment-thumb">
+                        <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
+                            target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                    </div>
+                    <div class="attachment-details">
+                        <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"
+                                target="_Blank">{{i.fields.title}}</a></h2>
+                        <p class="metadata">
+                            <span class="govuk-!-padding-right-5">
+                                {{i.fields.minutes.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.minutes.fields.file.details.size | filesizeformat}}</span>
+                        </p>
+                        <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
+                                href="/accessibility/request/">Request an accessible format</a>.</p>
+
+
+                </section>
+
+                {%endfor%}
+                {% else %}
+                <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-body">There are no minutes published for the selected year.</p>
+                </div>
+                {% endif %}
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+{% endblock %}

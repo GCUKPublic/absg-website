@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{page.fields.title}} - Biography
+{% endblock %}
+
+{% block pageDescription %}
+Biography of {{page.fields.title}} 
+{% endblock %}
+
+{% block pageMeta %}
+<meta property="og:title" content="{{content_page.items[0].fields.title}}" />
+<meta property="og:type" content="article" />
+<meta property="og:url"
+    content="https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}" />
+<meta property="og:image" content="https://absg-beta-staging.herokuapp.com/public/images/og-logo.png" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:height" content="314" />
+<meta property="og:description" content="{{content_page.items[0].fields.summary}}" />
+<meta property="og:article:published_time" content="{{content_page.items[0].fields.publishedDate}}" />
+<meta property="og:article:modified_time" content="{{content_page.items[0].sys.updatedAt}}" />
+<meta property="og:image:alt" content="ABSG Logo" />
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "{{content_page.items[0].fields.title}}",
+        "datePublished": "{{content_page.items[0].fields.publishedDate}}",
+        "dateModified": "{{content_page.items[0].sys.updatedAt}}",
+        "image": "https://absg-beta-staging.herokuapp.com/public/images/og-logo.png",
+        "description": "{{content_page.items[0].fields.summary}}",
+        "mainEntityOfPage": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}",
+        "author": {
+            "@type": "Organization",
+            "name": "ABSG"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ABSG",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://absg-beta-staging.herokuapp.com/public/images/logo.png"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "name": "Home",
+                "@id": "https://absg-beta-staging.herokuapp.com"
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "name": "News",
+                "@id": "https://absg-beta-staging.herokuapp.com/news"
+            }
+        }, {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "name": "{{content_page.items[0].fields.title}}",
+                "@id": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
+            }
+        }]
+    }
+</script>
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{page.fields.title}}</h1>
+                <p class="govuk-body-l">Register of Interests</p>
+            </div>
+        </div>
+    </div>
+    <div class="gc-hero-meta">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+
+
+                <div class="govuk-grid-column-one-quarter">
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated on</span>
+
+                    {{page.sys.updatedAt | date('DD MMMM YYYY')}}
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
+
+                    <a href="/about-us">Transparency Data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+            {% markdown %}
+            {{page.fields.storyBody | safe}}
+            {% endmarkdown %}
+
+            <h2 class="govuk-heading-m">Interests</h2>
+
+            <table class="govuk-table">
+                <caption class="govuk-table__caption">Dates and amounts</caption>
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Type of interest</th>
+                        <th scope="col" class="govuk-table__header">Details</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Remunerated employment</th>
+                        <td class="govuk-table__cell"> 
+
+                            {% if page.fields.remuneratedEmployment %}
+                            {% markdown %}
+                            {{page.fields.remuneratedEmployment | safe}}
+                            {% endmarkdown %}
+                            {% else %}
+                           None
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Related undertakings</th>
+                        <td class="govuk-table__cell">
+                            {% if page.fields.relatedUndertakings %}
+                            {% markdown %}
+                            {{page.fields.relatedUndertakings | safe}}
+                            {% endmarkdown %}
+                            {% else %}
+                           None
+                            {% endif %}
+
+
+                        </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Contracts, Consultancy or Self-employment</th>
+                        <td class="govuk-table__cell"> 
+                            {% if page.fields.contractsConsultancyOrSelfEmployment %}
+                            {% markdown %}
+                            {{page.fields.contractsConsultancyOrSelfEmployment | safe}}
+                            {% endmarkdown %}
+                            {% else %}
+                           None
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Non-financial interests</th>
+                        <td class="govuk-table__cell"> 
+                                {% if page.fields.nonFinancialInterests %}
+                                {% markdown %}
+                                {{page.fields.nonFinancialInterests | safe}}
+                                {% endmarkdown %}
+                                {% else %}
+                               None
+                                {% endif %}
+                            
+                           </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+
+                <aside class="app-related-items" role="complementary">
+                        <h3 class="govuk-heading-s">
+                            Biography
+                        </h3>
+                        <p class="govuk-body">
+                            <a href="/about-us/person/{{page.fields.person.fields.slug}}">{{page.fields.person.fields.name}}
+                          </a>
+                        </p>
+                    </aside>
+
+                    <aside class="app-related-items" role="complementary">
+                            <h3 class="govuk-heading-s">
+                                Other board members
+                            </h3>
+                        
+                            {% if people.items.length > 0 %}
+                            <ul class="govuk-list">
+                                {% for person in people.items %}
+                                <li>
+                                    <a class="govuk-link" href="/about-us/transparency/register-of-interest/{{ person.fields.slug }}">{{person.fields.name}}</a>
+                                </li>
+                                {%endfor%}
+                        
+                            </ul>
+                            {% else %}
+                            {% endif %}
+                            </aside>    
+
+            {% include "../../../includes/sharethis.html" %}
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Board meetings and minutes
+{% endblock %}
+
+
+{% block pageDescription %}
+Details and minutes of ABSG board meetings
+{% endblock %}
+
+{% block heroClass %}
+
+{% endblock %}
+
+{% block heroContent %}
+<section class="gc-hero">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">About us</h1>
+                <p class="govuk-body-l">What we do, our Board members, meetings and governance</p>
+            </div>
+        </div>
+    </div>
+    <div class="gc-hero-meta">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                     <a href="/about-us/board-minutes" class="govuk-back-link">Back to board minutes</a>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-s">Contents</h2>
+            <ul class="govuk-list">
+                <li>
+                    — <a class="govuk-link" href="/about-us/">Overview</a>
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/board-members">Board members</a>
+                </li>
+                <li>
+                    — Board meetings and minutes
+                </li>
+                <li>
+                    — <a class="govuk-link" href="/about-us/governance">Governance</a>
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-l">Archive board minutes</h2>
+
+            <p class="govuk-body">We are working on getting board minutes prioir to January 2019 online.</p>
+
+            <p class="govuk-body">If you require minutes that are not available online, <a href="/contact/">contact us</a>.</p>
+
+    
+        </div>
+
+
+
+        <div class="govuk-grid-column-one-third">
+            {% include "../includes/sharethis.html" %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
