@@ -14,7 +14,6 @@ Search results
 {% endblock %}
 
 {% block heroContent %}
-<section class="gc-hero">
 
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
@@ -24,7 +23,6 @@ Search results
         </div>
     </div>
 
-</section>
 {% endblock %}
 
 {% block beforeContent %}
@@ -49,7 +47,7 @@ Search results
 
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/about-us/person/{{ result.fields.slug }}">
+                        <a class="" href="/about-us/person/{{ result.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.name}}</h3>
 
@@ -70,7 +68,7 @@ Search results
                 {% if result.sys.contentType.sys.id === 'news' %}
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/news/story/{{ result.fields.slug }}">
+                        <a class="" href="/news/story/{{ result.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
                                 <div class="govuk-grid-row">
@@ -93,7 +91,7 @@ Search results
                 {% if result.sys.contentType.sys.id === 'registerOfInterest' %}
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper"
+                        <a class=""
                             href="/about-us/transparency/register-of-interest/{{ result.fields.person.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
@@ -117,7 +115,7 @@ Search results
                 {% if result.sys.contentType.sys.id === 'speech' %}
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/news/story/{{ result.fields.slug }}">
+                        <a class="" href="/news/story/{{ result.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
                                 <div class="govuk-grid-row">
@@ -140,7 +138,7 @@ Search results
                 {% if result.sys.contentType.sys.id === 'transparencyData' %}
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/about-us/transparency/{{ result.fields.slug }}">
+                        <a class="" href="/about-us/transparency/{{ result.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
                                 <div class="govuk-grid-row">
@@ -163,7 +161,7 @@ Search results
                 {% if result.sys.contentType.sys.id === 'boardMinutes' %}
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/about-us/board-minutes/#{{result.fields.slug}}">
+                        <a class="" href="/about-us/board-minutes/#{{result.fields.slug}}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-4">{{result.fields.title}}</h3>
                                 <div class="govuk-grid-row">

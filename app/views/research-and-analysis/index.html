@@ -13,18 +13,17 @@ Research and analysis
 {% endblock %}
 
 {% block heroContent %}
-<section class="gc-hero">
 
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Research and analysis</h1>
-                <p class="govuk-body-l">Research and publications from the ABSG</p>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Advice and Publications</h1>
+                <p class="govuk-body-l">Read or download advice and publications from the ABSG</p>
             </div>
         </div>
     </div>
 
-</section>
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -77,7 +76,7 @@ Research and analysis
                 <span class="govuk-visually-hidden">Article {{loop.index}} of {{list_of_pages.items.length}}</span>
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/research-and-analysis/publication/{{i.fields.slug}}">
+                        <a  href="/research-and-analysis/publication/{{i.fields.slug}}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
                                 <p class="gc-card__description govuk-body-s">

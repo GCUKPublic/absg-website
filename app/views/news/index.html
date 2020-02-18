@@ -14,18 +14,16 @@ News stories from the ABSG
 {% endblock %}
 
 {% block heroContent %}
-<section class="gc-hero">
-
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">News and updates</h1>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">News</h1>
                 <p class="govuk-body-l">News, speeches and updates from the ABSG</p>
             </div>
         </div>
     </div>
 
-</section>
+
 {% endblock %}
 
 {% block beforeContent %}
@@ -75,7 +73,7 @@ News stories from the ABSG
                 <span class="govuk-visually-hidden">Article {{loop.index}} of {{list_of_pages.items.length}}</span>
                 <div class="govuk-grid-column-full gc-card-group__item">
                     <div class="gc-card">
-                        <a class="gc-card__link-wrapper" href="/news/story/{{ i.fields.slug }}">
+                        <a class="" href="/news/story/{{ i.fields.slug }}">
                             <div class="gc-card__content">
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-2">{{i.fields.title}}</h3>
                                 <p class="gc-card__description govuk-body-s">

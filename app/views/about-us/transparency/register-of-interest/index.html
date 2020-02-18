@@ -75,7 +75,6 @@ Biography of {{page.fields.title}}
 {% endblock %}
 
 {% block heroContent %}
-<section class="gc-hero">
 
     <div class="govuk-width-container">
         <div class="govuk-grid-row">
@@ -85,25 +84,6 @@ Biography of {{page.fields.title}}
             </div>
         </div>
     </div>
-    <div class="gc-hero-meta">
-        <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-
-
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Updated on</span>
-
-                    {{page.sys.updatedAt | date('DD MMMM YYYY')}}
-                </div>
-                <div class="govuk-grid-column-one-quarter">
-                    <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
-
-                    <a href="/about-us">Transparency Data</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock %}
 
 {% block content %}
@@ -112,10 +92,28 @@ Biography of {{page.fields.title}}
         <div class="govuk-grid-column-two-thirds">
 
 
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+    
+    
+                    <div class="govuk-grid-column-one-half"><p class="govuk-body">
+                        <span class="govuk-!-font-weight-bold gc-meta-title">Updated on</span>
+    
+                        {{page.sys.updatedAt | date('DD MMMM YYYY')}}</p>
+                    </div>
+                    <div class="govuk-grid-column-one-half"><p class="govuk-body">
+                        <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
+    
+                        <a href="/about-us">Transparency Data</a></p>
+                    </div>
+
+                </div>
+            </div>
 
             {% markdown %}
             {{page.fields.storyBody | safe}}
             {% endmarkdown %}
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
             <h2 class="govuk-heading-m">Interests</h2>
 

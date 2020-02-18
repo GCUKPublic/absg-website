@@ -20,7 +20,8 @@ harms.
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-5">We provide independent advice to the Gambling
         Commission</h1>
-      <p class="govuk-body-l  govuk-!-margin-bottom-9">Our aim is to achieve a Great Britain free from the consequences of gambling-related
+      <p class="govuk-body-l  govuk-!-margin-bottom-9">Our aim is to achieve a Great Britain free from the consequences
+        of gambling-related
         harms.
       </p>
     </div>
@@ -35,6 +36,111 @@ harms.
 {% endblock %}
 
 {% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row  gc-card-group">
+
+
+    <div class="govuk-grid-column-one-third gc-card-group__item">
+      <div class="gc-card">
+
+        <a href="/about-us/board-members">
+          <img src="/public/images/office.jpg" style="max-width:100%; width: 100%; border-radius: 5px 5px 0px 0px"
+            alt="Picture of the office">
+          <div class="gc-card__content">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Who we are</h3>
+            <p class="gc-card__description">Find out who makes up the ABSG board</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third gc-card-group__item">
+      <div class="gc-card">
+
+        <a href="/about-us/">
+          <img src="/public/images/mug.jpg" style="max-width:100%; width: 100%; border-radius: 5px 5px 0px 0px"
+            alt="Picture of a mug">
+          <div class="gc-card__content">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">What we do</h3>
+            <p class="gc-card__description">Read about the work we’re doing to reduce  gambling-related harms</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third gc-card-group__item">
+      <div class="gc-card">
+
+        <a href="/research-and-analysis">
+          <img src="/public/images/report.jpeg" style="max-width:100%; width: 100%; border-radius: 5px 5px 0px 0px"
+            alt="Picture of {{person.fields.name}}">
+          <div class="gc-card__content">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Advice and Research</h3>
+            <p class="gc-card__description">Download papers and research published by the ABSG</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="govuk-grid-row" style="  background:  url('/public/images/officebg.jpg'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover; 
+  object-fit: cover;">
+  <div class="bg-cover">
+    <div class="govuk-width-container">
+
+
+
+
+      <div class="govuk-grid-column-full panel-block-container__white govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-full">
+
+
+            <h2 class="govuk-heading-m">Our role</h2>
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body">The ABSG provides independent advice to:</p>
+            <ul class="govuk-list govuk-list--number">
+              <li>Help deliver the National Strategy to Reduce Gambling Harms</li>
+              <li>Help increase research capacity and capability through engaging with a wide range of experts</li>
+              <li>Help share findings about best practice so they have an impact</li>
+              <li>Help solve policy dilemmas where research evidence is lacking or ambiguous.</li>
+            </ul>
+
+            <p class="govuk-body govuk-!-padding-bottom-0">
+              <a class="govuk-link govuk-!-margin-bottom-0 govuk-!-font-weight-bold" href="/about-us/">Learn more about
+                our role</a>
+
+            </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+            <img src="/public/images/new-strat.jpg" style="max-width:100%; width: 100%; border-radius: 5px"
+              alt="Picture of a mug">
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+</div>
 
 <div class="gc-section govuk-!-padding-bottom-9">
 

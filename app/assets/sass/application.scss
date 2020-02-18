@@ -6,25 +6,24 @@ $dark-red: #b00000;
 $mid-red: #FF5252;
 $light-red: #EF9A9A;
 
+.govuk-main-wrapper {
+    padding-top: 40px;
+    padding-bottom: 0px !important;
+}
 
 .share-icon {
     width: 32px;
 }
 
-.gc-section{
-    margin: 20px 0px 40px 0px;}
+.gc-section {
+    padding: 50px 0px 30px 0px;
+}
 
 .gc-section--alt {
     background: #f3f2f1;
 }
 
-.gc-header {
-    background-image: radial-gradient(18% 95%, #E5E5E5 0%, #CACACA 100%);
-}
 
-.gc-hero {
-    background-color: $dark-red;
-}
 
 
 .facebook {
@@ -48,6 +47,13 @@ $light-red: #EF9A9A;
 .gc-card__content {
     padding: 20px;
 }
+
+.gc-card__content {
+    padding: 20px;
+
+}
+
+
 
 .gc-site-menu {
     width: 100%;
@@ -280,12 +286,19 @@ a.active {
 
 
 .nhsuk-header {
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f2f2+0,e2e2e2+100 */
-background: rgb(242,242,242); /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  rgba(242,242,242,1) 0%, rgba(226,226,226,1) 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  rgba(242,242,242,1) 0%,rgba(226,226,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e2e2e2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f2f2+0,e2e2e2+100 */
+    background: rgb(242, 242, 242);
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(242, 242, 242, 1) 0%, rgba(226, 226, 226, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(242, 242, 242, 1) 0%, rgba(226, 226, 226, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(242, 242, 242, 1) 0%, rgba(226, 226, 226, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e2e2e2', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+
+    background-image: radial-gradient(18% 95%, rgb(237, 237, 237) 0%, #CACACA 100%) !important;
 
 }
 
@@ -598,7 +611,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 
     .nhsuk-search__submit:focus {
         background-color: #ffeb3b;
-        border-bottom: 4px solid #b00000;
         box-shadow: inset 0 0 0 4px #ffeb3b;
         outline: 4px solid transparent;
         outline-offset: 4px
@@ -686,7 +698,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
         height: 40px;
         padding: 0 12px;
         width: 200px;
-        border-radius:  5px 0px 0px 5px;
+        border-radius: 5px 0px 0px 5px;
     }
 
     .nhsuk-search__input::placeholder {
@@ -860,7 +872,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 }
 
 .nhsuk-header__navigation {
-    background-color: #fff;
     clear: both;
     display: none;
     overflow: hidden
@@ -946,32 +957,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 .nhsuk-header__navigation-list {
     list-style: none;
     margin: 0;
-    padding-left: 0
+    padding-left: 0;
 }
 
+
+
 .nhsuk-header__navigation-item {
-    border-top: 1px solid #f0f4f5;
     margin-bottom: 0;
     position: relative
 }
 
 .nhsuk-header__navigation-link {
     font-weight: 400;
-    font-size: 14px;
-    font-size: .875rem;
-    line-height: 1.71429;
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    color: #b00000;
+    font-size: 16px;
     display: block;
-    padding: 12px 16px;
+    padding: 10px 10px;
     text-decoration: none
 }
 
 @media (min-width:40.0625em) {
     .nhsuk-header__navigation-link {
-        font-size: 16px;
-        font-size: 1rem;
+        font-size: 19px;
         line-height: 1.5
     }
 
@@ -994,22 +1000,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 
 @media (min-width:61.875em) {
     .nhsuk-header__navigation-link:visited {
-        color: #fff
+        color: $black;
     }
 }
 
-.nhsuk-header__navigation-link:hover {
-    background-color: #b00000;
-    box-shadow: none;
-    color: #fff;
-    text-decoration: underline
-}
 
 
 .nhsuk-header__navigation-active {
-    background-color: #b00000;
     box-shadow: none;
-    color: #fff;
+    color: $black;
     text-decoration: underline
 }
 
@@ -1017,15 +1016,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     fill: #ffffff
 }
 
+.nhsuk-header__navigation-link:hover,
 .nhsuk-header__navigation-link:active,
 .nhsuk-header__navigation-link:focus {
-    background-color: #ffeb3b;
-    border-bottom: 4px solid #212b32;
-    box-shadow: none;
+
+    text-decoration: underline;
     color: #212b32;
-    outline: 4px solid transparent;
-    outline-offset: 4px;
-    text-decoration: none
 }
 
 .nhsuk-header__navigation-link:active:hover,
@@ -1037,10 +1033,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 .nhsuk-header__navigation-link:active:visited,
 .nhsuk-header__navigation-link:focus:visited {
     background-color: #ffeb3b;
-    color: #ffffff
+    color: $black;
 }
 
 @media (min-width:61.875em) {
+
+
     .nhsuk-header__menu-toggle {
         display: none
     }
@@ -1054,32 +1052,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     }
 
     .nhsuk-header__navigation {
-        background-color: #800000;
+        background-color: transparent;
         display: block;
         margin: 0 auto;
         max-width: 100% !important;
     }
 
 
-
-
     .nhsuk-header__navigation-list {
-        border-top: 1px solid rgba(255, 255, 255, .2);
         display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 0;
-        width: 100%
+        width: 100%;
+        border-top: 0px;
+        margin-top: 5px;
     }
 
     .nhsuk-header__navigation-list--small {
-        justify-content: flex-start
+        justify-content: flex-end
     }
 
     .nhsuk-header__navigation-item {
-        border-top: 0;
         margin: 0;
-        text-align: center
+        text-align: right;
+        border: none;
     }
 
     .nhsuk-header__navigation-item .nhsuk-icon__chevron-right {
@@ -1087,19 +1084,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     }
 
     .nhsuk-header__navigation-link {
-        color: #fff;
+        color: $black;
         line-height: normal
     }
 
     .nhsuk-header__navigation-link:active {
-        background-color: #b00000;
-        color: #f0f4f5
+        background-color: transparent;
+        color: $black;
     }
 
     .nhsuk-header__navigation-link.is-active,
     .nhsuk-header__navigation-link:active,
     .nhsuk-header__navigation-link:hover {
-        background-color: #b00000
+        background-color: transparent;
     }
 }
 
@@ -1180,10 +1177,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     color: #800000 !important;
     text-decoration: none;
     font-weight: 700;
+    border: none;
 }
 
 .nhsuk-header__navigation-link:hover {
-    color: #ffffff !important;
+    color: $black !important;
     text-decoration: none;
     font-weight: 700;
 }
@@ -1198,13 +1196,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     .nhsuk-header__navigation-list {
         display: -ms-flexbox;
         display: flex;
-        justify-content: left;
+        justify-content: flex-end;
         padding: 0;
         width: 100%;
     }
 
     .nhsuk-header__navigation-link {
-        color: #ffffff !important;
+        color: $black !important;
         text-decoration: none;
         font-weight: 700;
     }
@@ -1214,7 +1212,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 }
 
 .nhsuk-header__navigation-active {
-    color: #ffffff !important;
+    color: $black !important;
     text-decoration: none;
     font-weight: 700;
 }
@@ -1354,8 +1352,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 }
 
 .gc-hero-meta {
+    background: rgba(0, 0, 0, 0.2);
+
     .govuk-back-link {
         border-bottom: none;
+        font-size: 19px;
+        font-weight: bold;
     }
 }
 
@@ -1372,12 +1374,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
     color: #003078;
 }
 
-.gc-card .gc-card__content .gc-card__description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 20px;
-}
 
 
 .panel-block-container__white {
@@ -1390,42 +1386,94 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', end
 
 
 
-.site-top-nav{background: #BD0000;
+.site-top-nav {
+    background: #BD0000;
 
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
-      }
-      
-      li {
+    }
+
+    li {
         float: left;
         margin-bottom: 0px;
         font-size: 16px;
-      }
-      
-      li a {
+    }
+
+    li a {
         display: block;
         color: white;
         text-align: center;
         padding: 8px 10px 8px 10px;
         text-decoration: none;
-      }
-      
-      /* Change the link color to #111 (black) on hover */
-      li a:hover {
-        background-color: rgba(0,0,0,0.5);
-      }
+    }
 
-      .active {
-        background-color: rgba(0,0,0,0.5);
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $white;
+    }
+
+    .active {
+        background-color: rgba(0, 0, 0, 0.5);
         font-weight: bold;
-      }
+
+        color: $white;
+
+        &:focus {
+            background-color: #fd0;
+
+            color: $black;
+        }
+    }
+
+    ul.right {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        float: right;
+    }
+}
+
+.gc-search {
+    right: 0;
+    position: absolute;
+    max-width: 60%;
+}
+
+.gc-logo {
+    max-width: 260px !important;
+}
+
+.govuk-button--warning {
+    border-radius: 5px;
 }
 
 
 
-.govuk-button--warning{border-radius:  5px;}
 
-*{font-family: 'Nunito', sans-serif !important;}
+* {
+    font-family: 'Nunito', sans-serif !important;
+}
+
+
+.gc-footer {
+    background: #222222;
+
+    .govuk-footer__link,
+    h3,
+    p {
+        color: #ffffff;
+    }
+}
+
+.bg-cover {
+    background: rgba(254, 41, 17, 0.30) !important;
+
+  
+    display: -ms-flex; display: -webkit-flex; display: flex;
+    
+}
