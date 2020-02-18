@@ -1016,19 +1016,7 @@ a.active {
     fill: #ffffff
 }
 
-.nhsuk-header__navigation-link:hover,
-.nhsuk-header__navigation-link:active,
-.nhsuk-header__navigation-link:focus {
 
-    text-decoration: underline;
-    color: #212b32;
-}
-
-.nhsuk-header__navigation-link:active:hover,
-.nhsuk-header__navigation-link:focus:hover {
-    background-color: #ffeb3b;
-    color: #212b32
-}
 
 .nhsuk-header__navigation-link:active:visited,
 .nhsuk-header__navigation-link:focus:visited {
@@ -1477,3 +1465,25 @@ a.active {
     display: -ms-flex; display: -webkit-flex; display: flex;
     
 }
+
+.nhsuk-header__navigation-link:hover,
+.nhsuk-header__navigation-link:active,
+.nhsuk-header__navigation-link:focus {
+
+    background-color: #ffeb3b !important;
+    color: #212b32 !important;
+    
+    .nhsuk-icon__chevron-right {
+    fill: #212121;
+    position: absolute;
+    right: 4px;
+    top: 11px;
+}
+}
+
+.nhsuk-header__navigation-link:active:hover,
+.nhsuk-header__navigation-link:focus:hover {
+    background-color: #ffeb3b !important;
+    color: #212b32 !important
+}
+
