@@ -40,17 +40,63 @@
 
 {% block content %}
 
+<div class="govuk-grid-row gc-section gc-section--alt govuk-!-margin-bottom-5" style="background-color: #efefef;">
+    <div class="govuk-width-container">
+  
+  
+      <div class="govuk-grid-column-full panel-block-container__white">
+  
+        <div class="govuk-grid-row">
+  
+          <div class="govuk-grid-column-full">
+  
+  
+            <h2 class="govuk-heading-m">The National Gambling Helpline</h2>
+          </div>
+  
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body">The National Gambling Helpline provides confidential information, advice and support for
+              anyone affected by problem gambling in England, Scotland and Wales.</p>
+  
+            <p class="govuk-body govuk-!-padding-bottom-0">
+              <a class="govuk-button govuk-button--warning govuk-!-margin-bottom-0"
+                href="https://www.gamcare.org.uk/get-support/talk-to-us-now/" target="_Blank">Get help online</a>
+  
+            </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+  
+            <p class="govuk-body govuk-!-margin-bottom-0 ">Call the helpline on</p>
+  
+            <p class="govuk-heading-l govuk-!-padding-top-2">
+              0808 8020 133
+  
+            </p>
+  
+  
+          </div>
+        </div>
+  
+      </div>
+  
+  
+  
+  
+  
+    </div>
+  </div>
+
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+
+
 
             {% markdown %}
             {{content.fields.body | safe}}
             {% endmarkdown %}
         </div>
-        <div class="govuk-grid-column-one-third">
-            {% include "./includes/sharethis.html" %}
-        </div>
+    
 
     </div>
 </div>

@@ -205,6 +205,13 @@ function getROIByPersonId(personId) {
     })
 }
 
+function getROIAll() {
+    return cms.cmsClient.getEntries({
+        'content_type': 'registerOfInterest',
+        order: 'fields.title',
+    })
+}
+
 function getAllPeople() {
     return cms.cmsClient.getEntries({
         'content_type': 'person',
@@ -242,6 +249,22 @@ exports.registerofinterest_get = function (req, res) {
                         console.log(error);
                     }));
     }
+}
+
+exports.fullregisterofinterest_get = function (req, res) {
+    console.log('full roi');
+
+    getROIAll()
+        .then((roi) => {
+            page = roi.items;
+            res.render('about-us/transparency/full-register-of-interest', {
+                page,
+                aboutActive,
+            })
+        }).catch(error => {
+            console.log(error);
+        });
+
 }
 
 

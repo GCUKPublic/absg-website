@@ -38,15 +38,16 @@ router.get('/about-us/board-minutes', aboutController.var_boardminutes_get);
 router.get('/about-us/board-minutes-archive', aboutController.var_boardminutes_archive_get);
 router.get('/about-us/governance', aboutController.governance_get);
 router.get('/about-us/person/:slug', aboutController.person_get);
-
 router.get('/about-us/transparency/:slug', aboutController.transparency_get);
 router.get('/about-us/transparency/board-minutes/:id', aboutController.boardminutes_get);
 router.get('/about-us/transparency/board-minutes/:slug', aboutController.boardminutes_get);
+router.get('/about-us/transparency/register-of-interest/:slug', aboutController.registerofinterest_get);
+
+router.get('/about-us/full-register-of-interest', aboutController.fullregisterofinterest_get);
 
 // Research pages
 router.get('/research-and-analysis/', researchController.index_get);
 router.get('/research-and-analysis/:id', researchController.index_get);
 router.get('/research-and-analysis/publication/:slug', researchController.publication_index_get);
 
-router.get('/about-us/transparency/register-of-interest/:slug', aboutController.registerofinterest_get);
 module.exports = router

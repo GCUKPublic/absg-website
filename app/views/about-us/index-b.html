@@ -15,15 +15,21 @@ Information about the ABSG, how we work and our values.
 
 {% block heroContent %}
 
-    <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">What we do</h1>
-                <p class="govuk-body-l">Information about what we do, who is on the ABSG Board, meetings and our governance.</p>
-            </div>
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-3">What we do</h1>
+            <p class="govuk-body-l">Information about what we do, who is on the ABSG Board, meetings and our governance.
+            </p>
         </div>
     </div>
+</div>
 
+<style>
+    .govuk-main-wrapper {
+        padding-top: 0px
+    }
+</style>
 
 {% endblock %}
 
@@ -32,6 +38,54 @@ Information about the ABSG, how we work and our values.
 {% endblock %}
 
 {% block content %}
+
+<div class="govuk-grid-row govuk-!-margin-bottom-8" style="  background:  url('/public/images/meeting.jpg'); 
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover; 
+        object-fit: cover;">
+    <div class="bg-cover">
+        <div class="govuk-width-container">
+            <div
+                class="govuk-grid-column-full panel-block-container__white govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+
+                <div class="govuk-grid-row">
+
+                    <div class="govuk-grid-column-full">
+
+                        <div class="govuk-grid-column-one-half">
+                            <h2 class="govuk-heading-m">Our values</h2>
+                            <ul>
+                                <li>integrity - we are honest, we listen to others and consider carefully diverse
+                                    views&nbsp;</li>
+                                <li>transparency - we are open</li>
+                                <li>excellence - we are committed to high standards</li>
+                                <li>collaborative - we work with others to reduce harm</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="govuk-grid-column-one-half">
+
+                            <img src="/public/images/new-strat.jpg"
+                                style="max-width:100%; width: 100%; border-radius: 5px" alt="Picture of a mug">
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
 <div class="govuk-width-container">
     <div class="govuk-grid-row">
 
@@ -64,6 +118,10 @@ Information about the ABSG, how we work and our values.
             </ul>
 
 
+
+
+
+
             <h2 class="govuk-heading-m">How we do this</h2>
 
             <p class="govuk-body">We work by:</p>
@@ -76,16 +134,34 @@ Information about the ABSG, how we work and our values.
                 <li>working collaboratively with others who have expertise, bringing them together to discuss issues of
                     mutual concern.&nbsp;</li>
             </ul>
-            <h2 class="govuk-heading-m">Our values</h2>
-            <ul>
-                <li>integrity - we are honest, we listen to others and consider carefully diverse views&nbsp;</li>
-                <li>transparency - we are open</li>
-                <li>excellence - we are committed to high standards</li>
-                <li>collaborative - we work with others to reduce harm</li>
-            </ul>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
             <h2 class="govuk-heading-m">How we're funded</h2>
             <p class="govuk-body">The Advisory Board for Safer Gambling is funded, and is provided with secretariat
                 support by the Gambling Commission.</p>
+
+
 
 
             <div class="govuk-!-margin-top-9">
@@ -106,11 +182,9 @@ Information about the ABSG, how we work and our values.
 
         </div>
 
-        <div class="govuk-grid-column-one-third">
 
 
-            {% include "../includes/sharethis.html" %}
-        </div>
+
     </div>
 
 
