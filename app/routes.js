@@ -18,6 +18,7 @@ router.get('/accessibility', homeController.accessibility_get);
 router.get('/privacy-and-cookies', homeController.privacy_get);
 router.get('/terms-and-conditions', homeController.terms_get);
 router.get('/related-organisations', homeController.related_get);
+router.get('/useful-links', homeController.useful_get);
 
 // Search
 router.get('/search/', searchController.index_get);

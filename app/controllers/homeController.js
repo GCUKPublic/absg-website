@@ -104,3 +104,22 @@ exports.related_get = function (req, res) {
             console.log(error);
         });
 }
+
+
+exports.useful_get = function (req, res) {
+    var content;
+    Promise.all([
+            cms.cmsClient.getEntry('3TCeN1NxQ1P8eAe3KMQzJ7')
+        ])
+        .then(([n]) => {
+            content = n;
+            console.log(n)
+            res.render('useful-links', {
+                homeactive,
+                content
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
