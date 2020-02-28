@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Research and analysis
+{{publication.fields.title}}
 {% endblock %}
 
 
@@ -38,7 +38,7 @@ Research and analysis
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                     <a href="/research-and-analysis/" class="govuk-back-link">Back to research and analysis</a>
+                     <a href="/research-and-analysis/" class="govuk-back-link">Back to Advice and Publications</a>
                 </div>
                
             </div>
@@ -62,28 +62,33 @@ Research and analysis
             <h2 class="govuk-heading-m">Documents</h2>
 
             {% for i in publication.fields.files %}
-            <section class="attachment embedded">
+            <section class="attachment embedded govuk-!-margin-bottom-5">
                 <span class="govuk-visually-hidden">Article {{loop.index}} of
                     {{i.items.length}}</span>
                 <div class="attachment-thumb">
                     <a aria-hidden="true" class="thumbnail" href="{{i.fields.file.url}}"
                         target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
                 </div>
-                <div class="attachment-details">
+                <div class="attachment-details  ">
                     <h2 class="govuk-heading-m"><a href="{{i.fields.file.url}}"
                             target="_Blank">{{i.fields.title}}</a></h2>
                     <p class="metadata">
                         <span class="govuk-!-padding-right-5">
                             {{i.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.file.details.size | filesizeformat}}</span>
                     </p>
-                    <p class="govuk-body-s">This file may not be suitable for users of assistive technology. <a
-                            href="/accessibility/request/">Request an accessible format</a>.</p>
+                   
 
                 </div>
             </section>
 
-            {{i | dump}}
             {%endfor%}
+
+            <h3 class="govuk-heading-m govuk-!-margin-top-9">
+                Need these in an accessible format?
+             </h3>
+
+            <p class="govuk-body-s">Some files may not be suitable for users of assistive technology. <a
+                href="/contact-us">Request an accessible format</a>, it would help us to know what technology you use and what format you require the document in.</p>
 
         </div>
         <div class="govuk-grid-column-one-third">

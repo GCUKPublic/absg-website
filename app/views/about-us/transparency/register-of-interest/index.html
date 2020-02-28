@@ -1,77 +1,26 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{{page.fields.title}} - Biography
+Register of interest - {{page.fields.title}}
 {% endblock %}
 
 {% block pageDescription %}
-Biography of {{page.fields.title}} 
+Register of interests for {{page.fields.title}} 
 {% endblock %}
 
 {% block pageMeta %}
 <meta property="og:title" content="{{content_page.items[0].fields.title}}" />
 <meta property="og:type" content="article" />
 <meta property="og:url"
-    content="https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}" />
-<meta property="og:image" content="https://absg-beta-staging.herokuapp.com/public/images/og-logo.png" />
+    content="https://beta.absg.org.uk/news/story/{{content_page.items[0].fields.slug}}" />
+<meta property="og:image" content="https://beta.absg.org.uk/public/images/og-logo.png" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:height" content="314" />
 <meta property="og:description" content="{{content_page.items[0].fields.summary}}" />
 <meta property="og:article:published_time" content="{{content_page.items[0].fields.publishedDate}}" />
 <meta property="og:article:modified_time" content="{{content_page.items[0].sys.updatedAt}}" />
 <meta property="og:image:alt" content="ABSG Logo" />
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "{{content_page.items[0].fields.title}}",
-        "datePublished": "{{content_page.items[0].fields.publishedDate}}",
-        "dateModified": "{{content_page.items[0].sys.updatedAt}}",
-        "image": "https://absg-beta-staging.herokuapp.com/public/images/og-logo.png",
-        "description": "{{content_page.items[0].fields.summary}}",
-        "mainEntityOfPage": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}",
-        "author": {
-            "@type": "Organization",
-            "name": "ABSG"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ABSG",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://absg-beta-staging.herokuapp.com/public/images/logo.png"
-            }
-        }
-    }
-</script>
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-                "name": "Home",
-                "@id": "https://absg-beta-staging.herokuapp.com"
-            }
-        }, {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-                "name": "News",
-                "@id": "https://absg-beta-staging.herokuapp.com/news"
-            }
-        }, {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-                "name": "{{content_page.items[0].fields.title}}",
-                "@id": "https://absg-beta-staging.herokuapp.com/news/story/{{content_page.items[0].fields.slug}}"
-            }
-        }]
-    }
-</script>
+
 {% endblock %}
 
 {% block heroContent %}
