@@ -63,7 +63,9 @@
         ga('create', 'UA-140145199-4', 'auto');
 
         // Replace the following lines with the plugins you want to use.
-        ga('require', 'eventTracker');
+        ga('require', 'eventTracker', {
+  attributePrefix: 'ga-'
+});
         ga('require', 'outboundLinkTracker');
         ga('require', 'urlChangeTracker');
         ga('require', 'maxScrollTracker');

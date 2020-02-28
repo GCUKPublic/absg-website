@@ -5,14 +5,13 @@ Register of interest - {{page.fields.title}}
 {% endblock %}
 
 {% block pageDescription %}
-Register of interests for {{page.fields.title}} 
+Register of interests for {{page.fields.title}}
 {% endblock %}
 
 {% block pageMeta %}
 <meta property="og:title" content="{{content_page.items[0].fields.title}}" />
 <meta property="og:type" content="article" />
-<meta property="og:url"
-    content="https://beta.absg.org.uk/news/story/{{content_page.items[0].fields.slug}}" />
+<meta property="og:url" content="https://beta.absg.org.uk/news/story/{{content_page.items[0].fields.slug}}" />
 <meta property="og:image" content="https://beta.absg.org.uk/public/images/og-logo.png" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:height" content="314" />
@@ -25,14 +24,14 @@ Register of interests for {{page.fields.title}}
 
 {% block heroContent %}
 
-    <div class="govuk-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{page.fields.title}}</h1>
-                <p class="govuk-body-l">Register of Interests</p>
-            </div>
+<div class="govuk-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{page.fields.title}}</h1>
+            <p class="govuk-body-l">Register of Interests</p>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -43,17 +42,19 @@ Register of interests for {{page.fields.title}}
 
             <div class="govuk-width-container">
                 <div class="govuk-grid-row">
-    
-    
-                    <div class="govuk-grid-column-one-half"><p class="govuk-body">
-                        <span class="govuk-!-font-weight-bold gc-meta-title">Updated on</span>
-    
-                        {{page.sys.updatedAt | date('DD MMMM YYYY')}}</p>
+
+
+                    <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body">
+                            <span class="govuk-!-font-weight-bold gc-meta-title">Updated on</span>
+
+                            {{page.sys.updatedAt | date('DD MMMM YYYY')}}</p>
                     </div>
-                    <div class="govuk-grid-column-one-half"><p class="govuk-body">
-                        <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
-    
-                        <a href="/about-us">Transparency Data</a></p>
+                    <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body">
+                            <span class="govuk-!-font-weight-bold gc-meta-title">Part of</span>
+
+                            <a href="/about-us">Transparency Data</a></p>
                     </div>
 
                 </div>
@@ -77,14 +78,14 @@ Register of interests for {{page.fields.title}}
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Remunerated employment</th>
-                        <td class="govuk-table__cell"> 
+                        <td class="govuk-table__cell">
 
                             {% if page.fields.remuneratedEmployment %}
                             {% markdown %}
                             {{page.fields.remuneratedEmployment | safe}}
                             {% endmarkdown %}
                             {% else %}
-                           None
+                            None
                             {% endif %}
                         </td>
                     </tr>
@@ -97,7 +98,7 @@ Register of interests for {{page.fields.title}}
                             {{page.fields.relatedUndertakings | safe}}
                             {% endmarkdown %}
                             {% else %}
-                           None
+                            None
                             {% endif %}
 
 
@@ -106,29 +107,29 @@ Register of interests for {{page.fields.title}}
 
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Contracts, Consultancy or Self-employment</th>
-                        <td class="govuk-table__cell"> 
+                        <td class="govuk-table__cell">
                             {% if page.fields.contractsConsultancyOrSelfEmployment %}
                             {% markdown %}
                             {{page.fields.contractsConsultancyOrSelfEmployment | safe}}
                             {% endmarkdown %}
                             {% else %}
-                           None
+                            None
                             {% endif %}
                         </td>
                     </tr>
 
                     <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Non-financial interests</th>
-                        <td class="govuk-table__cell"> 
-                                {% if page.fields.nonFinancialInterests %}
-                                {% markdown %}
-                                {{page.fields.nonFinancialInterests | safe}}
-                                {% endmarkdown %}
-                                {% else %}
-                               None
-                                {% endif %}
-                            
-                           </td>
+                        <td class="govuk-table__cell">
+                            {% if page.fields.nonFinancialInterests %}
+                            {% markdown %}
+                            {{page.fields.nonFinancialInterests | safe}}
+                            {% endmarkdown %}
+                            {% else %}
+                            None
+                            {% endif %}
+
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -139,33 +140,34 @@ Register of interests for {{page.fields.title}}
         </div>
         <div class="govuk-grid-column-one-third">
 
-                <aside class="app-related-items" role="complementary">
-                        <h3 class="govuk-heading-s">
-                            Biography
-                        </h3>
-                        <p class="govuk-body">
-                            <a href="/about-us/person/{{page.fields.person.fields.slug}}">{{page.fields.person.fields.name}}
-                          </a>
-                        </p>
-                    </aside>
+            <aside class="app-related-items" role="complementary">
+                <h3 class="govuk-heading-s">
+                    Biography
+                </h3>
+                <p class="govuk-body">
+                    <a href="/about-us/person/{{page.fields.person.fields.slug}}">{{page.fields.person.fields.name}}
+                    </a>
+                </p>
+            </aside>
 
-                    <aside class="app-related-items" role="complementary">
-                            <h3 class="govuk-heading-s">
-                                Other board members
-                            </h3>
-                        
-                            {% if people.items.length > 0 %}
-                            <ul class="govuk-list">
-                                {% for person in people.items %}
-                                <li>
-                                    <a class="govuk-link" href="/about-us/transparency/register-of-interest/{{ person.fields.slug }}">{{person.fields.name}}</a>
-                                </li>
-                                {%endfor%}
-                        
-                            </ul>
-                            {% else %}
-                            {% endif %}
-                            </aside>    
+            <aside class="app-related-items" role="complementary">
+                <h3 class="govuk-heading-s">
+                    Other board members
+                </h3>
+
+                {% if people.items.length > 0 %}
+                <ul class="govuk-list">
+                    {% for person in people.items %}
+                    <li>
+                        <a class="govuk-link"
+                            href="/about-us/transparency/register-of-interest/{{ person.fields.slug }}">{{person.fields.name}}</a>
+                    </li>
+                    {%endfor%}
+
+                </ul>
+                {% else %}
+                {% endif %}
+            </aside>
 
             {% include "../../../includes/sharethis.html" %}
 
