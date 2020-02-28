@@ -84,7 +84,9 @@ Board meeting minutes from the ABSG
                         {{list_of_pages.items.length}}</span>
                     <div class="attachment-thumb">
                         <a aria-hidden="true" class="thumbnail" href="{{i.fields.minutes.fields.file.url}}"
-                            target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                            target="_Blank"  ga-event-category="click"
+                            ga-event-action="Download" ga-event-label="Board Minutes"
+                            name="{{i.fields.title}}"><img alt="" src="/public/images/pdf.png"></a>
                     </div>
                     <div class="attachment-details">
                         <h2 class="govuk-heading-m"><a href="{{i.fields.minutes.fields.file.url}}"

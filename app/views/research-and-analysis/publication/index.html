@@ -66,7 +66,9 @@
                 <span class="govuk-visually-hidden">Article {{loop.index}} of
                     {{i.items.length}}</span>
                 <div class="attachment-thumb">
-                    <a aria-hidden="true" class="thumbnail" href="{{i.fields.file.url}}"
+                    <a aria-hidden="true" ga-event-category="click"
+                    ga-event-action="Download" ga-event-label="Publication"
+                    name="{{i.fields.title}}" class="thumbnail" href="{{i.fields.file.url}}"
                         target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
                 </div>
                 <div class="attachment-details  ">
