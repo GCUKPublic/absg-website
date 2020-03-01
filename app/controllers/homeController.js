@@ -26,7 +26,7 @@ exports.index_get = function (req, res) {
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 
 
@@ -39,14 +39,14 @@ exports.accessibility_get = function (req, res) {
         ])
         .then(([n]) => {
             content = n;
-            console.log(n)
+            //console.log(n)
             res.render('accessibility', {
                 homeactive,
                 content
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 
@@ -57,14 +57,14 @@ exports.privacy_get = function (req, res) {
         ])
         .then(([n]) => {
             content = n;
-            console.log(n)
+            //console.log(n)
             res.render('privacy-and-cookies', {
                 homeactive,
                 content
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 
@@ -76,14 +76,14 @@ exports.terms_get = function (req, res) {
         ])
         .then(([n]) => {
             content = n;
-            console.log(n)
+            //console.log(n)
             res.render('terms-and-conditions', {
                 homeactive,
                 content
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 
@@ -94,14 +94,14 @@ exports.related_get = function (req, res) {
         ])
         .then(([n]) => {
             content = n;
-            console.log(n)
+            //console.log(n)
             res.render('related-organisations', {
                 homeactive,
                 content
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 
@@ -113,13 +113,13 @@ exports.useful_get = function (req, res) {
         ])
         .then(([n]) => {
             content = n;
-            console.log(n)
+            //console.log(n)
             res.render('useful-links', {
                 homeactive,
                 content
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }

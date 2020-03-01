@@ -21,7 +21,7 @@ exports.index_get = function (req, res) {
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 
 }

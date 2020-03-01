@@ -23,21 +23,21 @@ exports.index_get = function (req, res) {
         ])
             .then(([n]) => {
                 list_of_pages = n;
-                console.log(n.items);
+                //console.log(n.items);
                 res.render('research-and-analysis/index', {
                     researchActive,
                     list_of_pages
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
     if (year) {
         var yearFrom = year + '-01-01T00:00:00Z';
         var yearTo = year + '-12-31T23:59:59Z';
         //validate year
-        console.log(year)
+        //console.log(year)
         Promise.all([
             cms.cmsClient.getEntries({
                 'content_type': 'researchPublication',
@@ -49,7 +49,7 @@ exports.index_get = function (req, res) {
         ])
             .then(([n]) => {
                 list_of_pages = n;
-                console.log(n.items);
+                //console.log(n.items);
                 res.render('research-and-analysis/index', {
                     year,
                     list_of_pages,
@@ -57,7 +57,7 @@ exports.index_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
 }
@@ -75,13 +75,13 @@ exports.publication_index_get = function (req, res) {
     ])
         .then(([n]) => {
             publication = n.items[0];
-            //console.log(publication);
-            console.log(publication.fields.files);
+            ////console.log(publication);
+            //console.log(publication.fields.files);
             res.render('research-and-analysis/publication/index', {
                 publication, researchActive
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }

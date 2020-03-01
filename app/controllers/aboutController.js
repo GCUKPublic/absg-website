@@ -30,7 +30,7 @@ exports.boardmembers_get = function (req, res) {
         })
     ])
         .then(([people]) => {
-            console.log(people.items);
+            //console.log(people.items);
 
             res.render('about-us/board-members', {
                 people,
@@ -38,7 +38,7 @@ exports.boardmembers_get = function (req, res) {
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 
@@ -64,7 +64,7 @@ exports.person_get = function (req, res) {
 
         ])
             .then(([person, people]) => {
-                console.log(person.items);
+                //console.log(person.items);
                 person = person.items[0];
                 res.render('about-us/person', {
                     person,
@@ -73,7 +73,7 @@ exports.person_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
 
@@ -88,7 +88,7 @@ exports.transparency_get = function (req, res) {
         return res.redirect('/about-us');
     }
 
-    console.log(slug);
+    //console.log(slug);
 
     Promise.all([
         cms.cmsClient.getEntries({
@@ -98,7 +98,7 @@ exports.transparency_get = function (req, res) {
     ])
         .then(([n]) => {
             content_page = n;
-            console.log(n.items);
+            //console.log(n.items);
 
             if (n.items.length === 0) {
                 return res.redirect('/about');
@@ -111,7 +111,7 @@ exports.transparency_get = function (req, res) {
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 
 
@@ -137,7 +137,7 @@ exports.boardminutes_get = function (req, res) {
         ])
             .then(([n]) => {
                 content_page = n;
-                console.log(n.items);
+                //console.log(n.items);
                 res.render('about-us/transparency/board-minutes/minutes', {
                     content_page,
                     aboutActive
@@ -145,19 +145,19 @@ exports.boardminutes_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
     if (year) {
         var yearFrom = year + '-01-01T00:00:00Z';
         var yearTo = year + '-12-31T23:59:59Z';
-        console.log(yearFrom);
-        console.log(yearTo);
+        //console.log(yearFrom);
+        //console.log(yearTo);
         //validate year
         var content_page;
         var list_of_pages;
         //var datetoSearchFrom = '01/01/:year';
-        console.log(year)
+        //console.log(year)
         Promise.all([
             cms.cmsClient.getEntries({
                 'content_type': 'boardMinutes',
@@ -175,7 +175,7 @@ exports.boardminutes_get = function (req, res) {
                 list_of_years = y;
                 //create an array of year and count
 
-                console.log(n.items);
+                //console.log(n.items);
                 res.render('about-us/transparency/board-minutes/index', {
                     year,
                     list_of_pages,
@@ -184,7 +184,7 @@ exports.boardminutes_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
 }
@@ -235,8 +235,8 @@ exports.registerofinterest_get = function (req, res) {
                     .then((roi) =>
                         getAllPeople()
                             .then((listofPeople) => {
-                                //console.log(roi.items[0]);
-                                //console.log(entrys.items[0]);
+                                ////console.log(roi.items[0]);
+                                ////console.log(entrys.items[0]);
                                 page = roi.items[0];
                                 people = listofPeople;
                                 res.render('about-us/transparency/register-of-interest/index', {
@@ -246,13 +246,13 @@ exports.registerofinterest_get = function (req, res) {
                                 })
                             }))
                     .catch(error => {
-                        console.log(error);
+                        //console.log(error);
                     }));
     }
 }
 
 exports.fullregisterofinterest_get = function (req, res) {
-    console.log('full roi');
+    //console.log('full roi');
 
     getROIAll()
         .then((roi) => {
@@ -262,7 +262,7 @@ exports.fullregisterofinterest_get = function (req, res) {
                 aboutActive,
             })
         }).catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 
 }
@@ -284,7 +284,7 @@ exports.var_boardminutes_get = function (req, res) {
             list_of_pages = n;
             //create an array of year and count
 
-            console.log(n.items);
+            //console.log(n.items);
             res.render('about-us/board-minutes', {
                 list_of_pages,
                 aboutActive
@@ -292,7 +292,7 @@ exports.var_boardminutes_get = function (req, res) {
             });
         })
         .catch(error => {
-            console.log(error);
+            //console.log(error);
         });
 }
 

@@ -14,7 +14,7 @@ exports.index_get = function (req, res) {
 
 exports.index_post = function (req, res) {
 
-    console.log("post")
+    //console.log("post")
 
     var name = req.session.data['name'];
     var contact = req.session.data['contact'];

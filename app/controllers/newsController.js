@@ -35,7 +35,7 @@ exports.index_get = function (req, res) {
                 content_page = n;
                 listOfNews = l;
 
-                console.log(n.items);
+                //console.log(n.items);
                 res.render('news/story', {
                     content_page,
                     newsactive,listOfNews
@@ -43,7 +43,7 @@ exports.index_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
     if (year) {
@@ -51,13 +51,13 @@ exports.index_get = function (req, res) {
 
         var yearFrom = year + '-01-01T00:00:00Z';
         var yearTo = year + '-12-31T23:59:59Z';
-        console.log(yearFrom);
-        console.log(yearTo);
+        //console.log(yearFrom);
+        //console.log(yearTo);
         //validate year
         var content_page;
         var list_of_pages;
         //var datetoSearchFrom = '01/01/:year';
-        console.log(year)
+        //console.log(year)
         Promise.all([
                 cms.cmsClient.getEntries({
                     'content_type': 'news',
@@ -76,7 +76,7 @@ exports.index_get = function (req, res) {
                 list_of_years = y;
                 //create an array of year and count
                 
-                console.log(n.items);
+                //console.log(n.items);
                  res.render('news/index', {
                     year,
                     list_of_pages,
@@ -85,7 +85,7 @@ exports.index_get = function (req, res) {
                 });
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
             });
     }
 }
