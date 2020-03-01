@@ -1,0 +1,3 @@
+Sitemap: https://beta.absg.org.uk/public/sitemap.xml
+User-agent: *
+Disallow:
