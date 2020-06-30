@@ -124,6 +124,32 @@
                     <a href="mailto:communications@gamblingcommission.gov.uk?subject=ABSG Contact">communications@gamblingcommission.gov.uk</a> </li>
             </ul> {% endif %}
 
+
+            <h2 class="govuk-heading-m">Related files</h2>
+
+            {% for i in content_page.items[0].fields.relatedFiles %}
+            <section class="attachment embedded govuk-!-margin-bottom-5">
+                <span class="govuk-visually-hidden">Article {{loop.index}} of
+                    {{i.items.length}}</span>
+                <div class="attachment-thumb">
+                    <a aria-hidden="true" ga-event-category="click"
+                    ga-event-action="Download" ga-event-label="Publication"
+                    name="{{i.fields.title}}" class="thumbnail" href="{{i.fields.file.url}}"
+                        target="_Blank"><img alt="" src="/public/images/pdf.png"></a>
+                </div>
+                <div class="attachment-details  ">
+                    <h2 class="govuk-heading-m"><a href="{{i.fields.file.url}}"
+                            target="_Blank">{{i.fields.title}}</a></h2>
+                    <p class="metadata">
+                        <span class="govuk-!-padding-right-5">
+                            {{i.fields.file.contentType.split('/')[1] | upper}}</span><span>{{i.fields.file.details.size | filesizeformat}}</span>
+                    </p>
+                   
+
+                </div>
+            </section>
+
+            {%endfor%}
         </div>
 
         <div class="govuk-grid-column-one-third">
