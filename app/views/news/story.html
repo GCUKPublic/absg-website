@@ -124,7 +124,7 @@
                     <a href="mailto:communications@gamblingcommission.gov.uk?subject=ABSG Contact">communications@gamblingcommission.gov.uk</a> </li>
             </ul> {% endif %}
 
-
+{% if content_page.items[0].fields.relatedFiles %}
             <h2 class="govuk-heading-m">Related files</h2>
 
             {% for i in content_page.items[0].fields.relatedFiles %}
@@ -150,6 +150,7 @@
             </section>
 
             {%endfor%}
+            {% endif %}
         </div>
 
         <div class="govuk-grid-column-one-third">
